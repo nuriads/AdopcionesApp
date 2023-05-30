@@ -6,7 +6,7 @@ include './models/crud/funcionesCrud.php';
 
 $array_carrusel = randomAnimals();
 $num = 0;
-$estado_itemcarrusel="active";
+$estado_itemcarrusel = "active";
 
 ?>
 
@@ -26,85 +26,83 @@ $estado_itemcarrusel="active";
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-      <!-- Indicators/dots -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-      </div>
+        <!-- Indicators/dots -->
+        <ul class="carousel-indicators" style="font-size:large;list-style:disc; color:blueviolet">
+        <li data-bs-target="#demo" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#demo" data-bs-slide-to="1"></li>
+        <li data-bs-target="#demo" data-bs-slide-to="2"></li>
+      </ul>
 
       <!-- The slideshow/carousel -->
       <div class="carousel-inner" style="height: 500px;">
-      
+
         <?php for ($i = 0; $i <= 2; $i++) : ?>
           <!--Carraousel item-->
-          <?php if($num!=0){
-              $estado_itemcarrusel="";
+          <?php if ($num != 0) {
+            $estado_itemcarrusel = "";
           }
-          ?> 
-          <?php //echo $estado_itemcarrusel ?>
+          ?>
+          <?php //echo $estado_itemcarrusel 
+          ?>
           <div class="carousel-item <?php echo $estado_itemcarrusel ?> ">
 
-          <div class="d-flex">
-        <div class="col">
-          <div class="card">
-          <img src="<?php echo "../assets/mascotas/".$array_carrusel[$num]->especie."/".$array_carrusel[$num]->microchip.".avif"?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre?>">
-            <div class="card-body">
-            <h5 class="card-title"><?= $array_carrusel[$num]->nombre?></h5>
-						<p class="card-text">Edad: <?=$array_carrusel[$num]->fecha_nac?></p>
-              <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
-              <a href="#" class="boton-animales">Adóptame!</a>
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <img src="<?php echo "../assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <div class="card-body">
+                    <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
+                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
+                    <a href="#" class="boton-animales">Adóptame!</a>
+                  </div>
+                </div>
+              </div>
+              <?php $num = $num + 1 ?>
+              <div class="col">
+                <div class="card">
+                  <img src="<?php echo "../assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <div class="card-body">
+                    <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
+                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
+                    <a href="#" class="boton-animales">Adóptame!</a>
+                  </div>
+                </div>
+              </div>
+              <?php $num = $num + 1 ?>
+              <div class="col">
+                <div class="card">
+                  <img src="<?php echo "../assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <div class="card-body">
+                    <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
+                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
+                    <a href="#" class="boton-animales">Adóptame!</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <?php  $num = $num+1 ?>
-        <div class="col">
-          <div class="card">
-          <img src="<?php echo "../assets/mascotas/".$array_carrusel[$num]->especie."/".$array_carrusel[$num]->microchip.".avif"?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre?>">
-            <div class="card-body">
-            <h5 class="card-title"><?= $array_carrusel[$num]->nombre?></h5>
-						<p class="card-text">Edad: <?=$array_carrusel[$num]->fecha_nac?></p>
-              <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
-              <a href="#" class="boton-animales">Adóptame!</a>
-            </div>
-          </div>
-        </div>
-        <?php  $num = $num+1 ?>
-        <div class="col">
-          <div class="card">
-          <img src="<?php echo "../assets/mascotas/".$array_carrusel[$num]->especie."/".$array_carrusel[$num]->microchip.".avif"?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre?>">
-					<div class="card-body">
-          <h5 class="card-title"><?= $array_carrusel[$num]->nombre?></h5>
-						<p class="card-text">Edad: <?=$array_carrusel[$num]->fecha_nac?></p>
-						<p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
-						<a href="#" class="boton-animales">Adóptame!</a>
-            </div>
-          </div>
-        </div>
+          <?php $num = $num + 1 ?>
+          <?php echo "" . $num ?>
+        <?php endfor ?>
       </div>
-          </div>
-          <?php  $num = $num+1 ?>
-          <?php echo "".$num ?>
-          <?php endfor ?>
-         
-
-         
-      </div>
-
+      <!-- Left and right controls/icons -->
+      <a class="carousel-control-prev" href="#demo" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#demo" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </a>
     </div>
   </div>
 </div>
 
-<!-- Left and right controls/icons -->
-<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon"></span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-  <span class="carousel-control-next-icon"></span>
-</button>
-</div>
-
-
+<br>
+<br>
 
 <div class="container">
   <div class="row">
