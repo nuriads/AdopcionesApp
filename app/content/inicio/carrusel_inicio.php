@@ -1,8 +1,8 @@
 <?php
-include 'index.html';
-include './models/AccesoDatos.php';
-include './models/Animal.php';
-include './models/crud/funcionesCrud.php';
+include '../../index.html';
+include '../../models/AccesoDatos.php';
+include '../../models/Animal.php';
+include '../../models/crud/funcionesCrud.php';
 
 $array_carrusel = randomAnimals();
 $num = 0;

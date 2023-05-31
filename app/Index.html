@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="carrusel_inicio.php">Inicio</a>
+            <a id="inicio" class="nav-link" aria-current="page" href="carrusel_inicio.php">Inicio</a>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="mascotasDropdown" role="button" data-bs-toggle="dropdown"
@@ -47,14 +47,14 @@
             <a href="#" class="nav-link dropdown-toggle" id="mascotasDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Colabora</a>
             <ul class="dropdown-menu" aria-labelledby="mascotasDropdown">
-              <li><a class="dropdown-item text-dark" href="adopta.php">Estoy interesado/a en adoptar</a></li>
-              <li><a class="dropdown-item text-dark" href="abuelitos.php">Adopta un abuelito</a></li>
-              <li><a class="dropdown-item text-dark" href="voluntariado.php">Voluntariado</a></li>
-              <li><a class="dropdown-item text-dark" href="registro.php">Soy un refugio o asociación</a></li>
+              <li><a id="adopta" class="dropdown-item text-dark" href="adopta.php">Estoy interesado/a en adoptar</a></li>
+              <li><a id="abuelitos" class="dropdown-item text-dark" href="abuelitos.php">Adopta un abuelito</a></li>
+              <li><a id="voluntariado" class="dropdown-item text-dark" href="voluntariado.php">Voluntariado</a></li>
+              <li><a id="registroRef" class="dropdown-item text-dark" href="registro.php">Soy un refugio o asociación</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./content/blog/blog.php">Blog</a>
+            <a id="blog" class="nav-link" aria-current="page" href="./content/blog/blog.php">Blog</a>
           </li>
         </ul>
         <div class="row">
@@ -79,11 +79,11 @@
 
       <!--Menú del usuario-->
       <div class="user-container" id="user-menu">
-        <img id="fotouser" src="../../../assets/images/foto-user.jpg" alt="Foto del usuario" id="user-img">
+        <a id="registro" href=""><img id="fotouser" src="../../../assets/images/foto-user.jpg" alt="Foto del usuario" id="user-img"></a>
         <div class="user-dropdown" id="user-menu">
           <ul>
-            <li><a href="./desplegable_usuario/mi_perfil.php">Mi perfil</a></li>
-            <li><a href="./desplegable_usuario/conf_usuario.php">Configuración</a></li>
+            <li><a id="mi_perfil" href="./desplegable_usuario/mi_perfil.php">Mi perfil</a></li>
+            <li><a id="conf_usu" href="./desplegable_usuario/conf_usuario.php">Configuración</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">Más opciones</a>
               <ul class="dropdown-menu">
@@ -92,7 +92,7 @@
                 <li><a href="#">Opción 3</a></li>
               </ul>
             </li>
-            <li><a href="./desplegable_usuario/cerrar_sesion.php">Cerrar sesión</a></li>
+            <li><a id="cerrar_sesion" href="./desplegable_usuario/cerrar_sesion.php">Cerrar sesión</a></li>
           </ul>
         </div>
       </div>
@@ -105,6 +105,7 @@
      var currentURL = window.location.href;
 
 // Definir las variables urluser y urllogo
+var urlestilos;
 var urluser;
 var urllogo;
 var urlindex;
@@ -117,31 +118,55 @@ var urlabuelitos;
 var urlvoluntariado;
 var urlregistro;
 var urlsoyasociacion;
-var urlestilos='';
+var urlmiperfil;
+var urlconfusu;
+var urlcerrarsesion;
 
 // Verificar la URL actual y asignar los valores correspondientes utilizando un switch
 switch (currentURL) {
-  case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
-    urlindex='';
-    urlgatos='../mascotas/gatos.php';
-    urlperros='../mascotas/perros.php';
-    urlhurones='../mascotas/hurones.php';//?
-    urlotros='../mascotas/otros-animales.php';//?
+ 
+  case 'http://localhost/AdopcionesApp_3.0/app/':
+    urlestilos='../assets/style.css';
+    urluser = '';
+    urllogo = '';
+    urlindex='./content/inicio/carrusel_inicio.php';
+    urlgatos='';
+    urlperros='';
+    urlhurones='';
+    urlotros='';
+    urladopta='';
+    urlabuelitos='';
+    urlvoluntariado='';
+    urlregistro='./content/registro/registro.php';
+    urlsoyasociacion='';
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
+    break;
+  case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
+    urlestilos='../../../assets/style.css';
+    urluser = '';
+    urllogo = '';
+    urlindex='../inicio/carrusel_inicio.php';
+    urlgatos='';
+    urlperros='';
+    urlhurones='';
+    urlotros='';
     urladopta='';
     urlabuelitos='';
     urlvoluntariado='';
     urlregistro='';
     urlsoyasociacion='';
-    urlestilos='../../../assets/style.css';
-
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/perros.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/gatos.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/hurones.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/otros-animales.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
+    urlestilos='../../../assets/style.css'; 
     urluser = '../../../assets/images/foto-user.jpg';
     urllogo = '../../../assets/images/logo4.PNG';
     urlindex='';
@@ -149,17 +174,20 @@ switch (currentURL) {
     urlperros='./perros.php';
     urlhurones='./hurones.php';
     urlotros='./otros-animales.php';
-    urladopta='';
-    urlabuelitos='';
-    urlvoluntariado='';
-    urlregistro='';
+    urladopta='../colabora/adopta.php';
+    urlabuelitos='../colabora/abuelitos.php';
+    urlvoluntariado='../colabora/voluntariado.php';
+    urlregistro='../registro/registro.php';
     urlsoyasociacion='';
-    urlestilos='../../../assets/style.css';
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
     break;
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/adopta.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
- urluser = '';
+    urlestilos='../../../assets/style.css'; 
+    urluser = '';
     urllogo = '';
     urlindex='';
     urlgatos='';
@@ -171,12 +199,59 @@ switch (currentURL) {
     urlvoluntariado='';
     urlregistro='';
     urlsoyasociacion='';
-    urlestilos='../../../assets/style.css';
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
     break;
-
+    case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
+    urlestilos='../../../assets/style.css';
+    urluser = '../../../assets/images/foto-user.jpg';
+    urllogo = '../../../assets/images/logo4.PNG';
+    urlindex='../inicio/carrusel_inicio.php';
+    urlgatos='../mascotas/gatos.php';
+    urlperros='../mascotas/perros.php';
+    urlhurones='../mascotas/hurones.php';
+    urlotros='../mascotas/otros-animales.php';
+    urladopta='';
+    urlabuelitos='';
+    urlvoluntariado='';
+    urlregistro='';
+    urlsoyasociacion='';
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
+    break;
+  case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro.php':
+    urlestilos='../../../assets/style.css';
+    urluser = '../../../assets/images/foto-user.jpg';
+    urllogo = '../../../assets/images/logo4.PNG';
+    urlindex='../inicio/carrusel_inicio.php';
+    urlgatos='../mascotas/gatos.php';
+    urlperros='../mascotas/perros.php';
+    urlhurones='../mascotas/hurones.php';
+    urlotros='../mascotas/otros-animales.php';
+    urladopta='';
+    urlabuelitos='';
+    urlvoluntariado='';
+    urlregistro='';
+    urlsoyasociacion='';
+    urlmiperfil='';
+    urlconfusu='';
+    urlcerrarsesion='';
+    break;
+ 
    
 }
-  // Poner los valores en el html
+  // Poner los valores de cada variable en el html
+
+  var linkinicio = document.getElementById("inicio");
+  linkinicio.href = urlindex;
+
+  var linkestilos = document.getElementById("estilos");
+  linkestilos.href = urlestilos;
+
+  var linkregistro = document.getElementById("registro");
+  linkregistro.href = urlregistro;
 
   var imglogo = document.getElementById("logomenu");
   imglogo.src = urllogo;
@@ -191,8 +266,13 @@ switch (currentURL) {
   var linkperros = document.getElementById("perros");
   linkperros.href = urlperros;
 
-  var linkestilos = document.getElementById("estilos");
-  linkestilos.href = urlestilos;
+  var linkhurones = document.getElementById("hurones");
+  linkhurones.href = urlhurones;
+
+  var linkhurones = document.getElementById("hurones");
+  linkhurones.href = urlhurones;
+
+ 
 </script>
 
 </body>
