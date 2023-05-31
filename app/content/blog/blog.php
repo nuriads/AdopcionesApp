@@ -1,7 +1,6 @@
 <?php
-$urllogo="../../assets/images/foto-user.jpg";
-$urlfoto="";
-include '../../index.php';
+
+include '../../index.html';
 
 ?>
 
@@ -10,7 +9,6 @@ include '../../index.php';
 <head>
   <title>Blog de Adopciones</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../assets/style.css">
   <style>
   .article-card {
     height: 100%;

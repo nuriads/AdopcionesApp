@@ -1,5 +1,8 @@
 <?php
-include 'mascotas.php';
+include './mascotas.php';
+include '../../models/AccesoDatos.php';
+include '../../models/Animal.php';
+include '../../models/crud/funcionesCrud.php';
 ?>
 
 <section id="mascotas">
