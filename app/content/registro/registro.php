@@ -1,4 +1,17 @@
-<?php include '../../index.html'; ?>
+<?php 
+
+
+
+if (strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
+    strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false) {
+    include '../index.html';
+    
+} elseif ($_SERVER['REQUEST_URI'] == '/AdopcionesApp_3.0/app/content/registro/registro.php') {
+    include '../../index.html';
+    
+}
+
+?>
 
 <div class='menus-contacto'>
   <div>

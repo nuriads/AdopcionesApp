@@ -1,8 +1,8 @@
 <?php
 
-include './models/AccesoDatos.php';
-include './models/Usuario.php';
-include './models/crud/funcionesCrud.php';
+include '../models/AccesoDatos.php';
+include '../models/Usuario.php';
+include '../models/crud/funcionesCrud.php';
 
 $msj="";
 
@@ -28,5 +28,5 @@ if ($insert) {
   $msj= "Error al insertar datos: " . $stmt->errorInfo();
 }
 
-include_once("registro.php");
+include_once("../content/registro/registro.php");
 ?>
