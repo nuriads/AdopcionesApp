@@ -116,7 +116,7 @@ $estado_itemcarrusel = "active";
     <div class="col-md-4">
       <h2>Últimas adopciones</h2>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/Buddy.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/mascotas/adopciones/Buddy.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Buddy</h5>
           <p class="card-text">Raza: Labrador Retriever</p>
@@ -124,7 +124,7 @@ $estado_itemcarrusel = "active";
         </div>
       </div>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/Luna.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/mascotas/adopciones/Luna.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Luna</h5>
           <p class="card-text">Raza: Siamese</p>
@@ -132,7 +132,7 @@ $estado_itemcarrusel = "active";
         </div>
       </div>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/prince.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/mascotas/adopciones/prince.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Prince & Barbara</h5>
           <p class="card-text">Raza: Pareja de agapornis</p>
