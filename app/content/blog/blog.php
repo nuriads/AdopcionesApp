@@ -33,7 +33,7 @@ include '../../index.html';
     <div class="row">
       <div class="col-lg-6">
         <div class="card article-card">
-          <img class="card-img-top" src="../assets/images/beneficios-dieta-raw.jpg" alt="Dieta BARF">
+          <img class="card-img-top" src="../../../assets/images/articulos/otras/beneficios-dieta-raw.jpg" alt="Dieta BARF">
           <div class="card-body">
             <h4 class="card-title">Dieta BARF para Mascotas</h4>
             <p class="card-text">La dieta BARF (Biologically Appropriate Raw Food) es una forma de alimentación para mascotas que consiste en ofrecerles alimentos crudos y naturales, similares a los que consumirían en estado salvaje. Esta dieta se basa en la idea de que los perros y gatos son carnívoros y se benefician de una alimentación más cercana a su naturaleza. En este artículo, exploraremos los beneficios de la dieta BARF, cómo comenzar a implementarla y algunos consejos útiles para una transición exitosa.</p>
@@ -59,11 +59,11 @@ include '../../index.html';
     <div class="row">
       <div class="col-lg-6">
         <div class="card article-card">
-          <img class="card-img-top" src="../assets/mascotas/gato/744612778330798.avif alt="Dieta BARF">
+          <img class="card-img-top" src="../../../assets/images/articulos/Mascotas/Kala.jpeg" alt="Dieta BARF">
           <div class="card-body">
             <h4 class="card-title">Kala</h4>
             <p class="card-text">La dieta BARF (Biologically Appropriate Raw Food) es una forma de alimentación para mascotas que consiste en ofrecerles alimentos crudos y naturales, similares a los que consumirían en estado salvaje. Esta dieta se basa en la idea de que los perros y gatos son carnívoros y se benefician de una alimentación más cercana a su naturaleza. En este artículo, exploraremos los beneficios de la dieta BARF, cómo comenzar a implementarla y algunos consejos útiles para una transición exitosa.</p>
-            <a href="../blog/articles/articulo_kala.php" class="btn btn-primary">Leer más</a>
+            <a href="../blog/articulos/articulo_kala.php" class="btn btn-primary">Leer más</a>
           </div>
         </div>
       </div>

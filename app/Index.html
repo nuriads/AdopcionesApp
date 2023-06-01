@@ -128,8 +128,8 @@ switch (currentURL) {
  
   case 'http://localhost/AdopcionesApp_3.0/app/':
     urlestilos='../assets/style.css';
-    urluser = '../assets/images/foto-user.jpg';
-    urllogo = '../assets/images/logo4.PNG';
+    urluser = '../assets/images/users/avatardefault.png';
+    urllogo = '../assets/images/logos/logo4.PNG';
     urlindex='./content/inicio/carrusel_inicio.php';
     urlgatos='';
     urlperros='';
@@ -147,8 +147,8 @@ switch (currentURL) {
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -170,8 +170,8 @@ switch (currentURL) {
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/otros-animales.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
     urlestilos='../../../assets/style.css'; 
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='./gatos.php';
     urlperros='./perros.php';
@@ -191,8 +191,8 @@ switch (currentURL) {
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
     urlestilos='../../../assets/style.css'; 
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -210,8 +210,8 @@ switch (currentURL) {
     break;
     case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -229,8 +229,8 @@ switch (currentURL) {
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -249,8 +249,8 @@ switch (currentURL) {
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_refugios.php':
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_usuario.php':
     urlestilos='../../assets/style.css';
-    urluser = '../../assets/images/foto-user.jpg';
-    urllogo = '../../assets/images/logo4.PNG';
+    urluser = '../../assets/images/users/avatardefault.png';
+    urllogo = '../../assets/images/logos/logo4.PNG';
     urlindex='../content/inicio/carrusel_inicio.php';
     urlgatos='../content/mascotas/gatos.php';
     urlperros='../content/mascotas/perros.php';
@@ -266,8 +266,25 @@ switch (currentURL) {
     urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
     urlblog='../content/blog/blog.php';
       break;
- 
-   
+    case 'http://localhost/AdopcionesApp_3.0/app/content/blog/articulos/articulo_kala.php':
+    urlestilos='../../../../assets/style.css';
+    urluser = '../../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../../assets/images/logos/logo4.PNG';
+    urlindex='../../inicio/carrusel_inicio.php';
+    urlgatos='../../mascotas/gatos.php';
+    urlperros='../../mascotas/perros.php';
+    urlhurones='../../mascotas/hurones.php';
+    urlotros='../../mascotas/otros-animales.php';
+    urladopta='../../colabora/adopta.php';
+    urlabuelitos='../../colabora/abuelitos.php';
+    urlvoluntariado='../../colabora/voluntariado.php';
+    urlregistro='../../registro/registro.php';
+    urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urlmiperfil='../../desplegable_usuario/mi_perfil.php';
+    urlconfusu='../../desplegable_usuario/conf_usuario.php';
+    urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
+    urlblog='../blog.php';
+    break;
 }
   
 // Pongo los valores de cada variable en el href o src del elemento html correspondiente
