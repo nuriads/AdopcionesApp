@@ -107,3 +107,5 @@ if (strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_for
   </div>
   
   <script src="../../js/registro.js"></script>
+
+
