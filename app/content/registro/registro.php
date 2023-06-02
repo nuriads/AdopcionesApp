@@ -1,7 +1,7 @@
 <?php 
 
 
-
+//Para que incluya el index también después de procesar el formulario
 if (strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
     strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false) {
     include '../index.html';

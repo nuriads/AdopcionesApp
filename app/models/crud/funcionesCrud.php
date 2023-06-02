@@ -68,4 +68,6 @@ function getallAnimales(){
     $array_animales=$midb->getallAnimals();
     return $array_animales;
 }
+
+//FUNCIONES DE SESSION
 ?>
