@@ -1,5 +1,5 @@
 <?php
-include 'index.html';?>
+include 'index.php';?>
 
 <main>
   <div class="item-a">

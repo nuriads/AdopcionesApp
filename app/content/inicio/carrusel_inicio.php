@@ -1,8 +1,19 @@
 <?php
-include '../../index.html';
-include '../../models/AccesoDatos.php';
-include '../../models/Animal.php';
-include '../../models/crud/funcionesCrud.php';
+if (
+  strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
+  strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false
+) {
+      require_once '../index.php';
+      require_once '../models/AccesoDatos.php';
+      require_once '../models/Animal.php';
+      require_once '../models/crud/funcionesCrud.php';
+} elseif ($_SERVER['REQUEST_URI'] == '/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php') {
+      require_once '../../index.php';
+      require_once '../../models/AccesoDatos.php';
+      require_once '../../models/Animal.php';
+      require_once '../../models/crud/funcionesCrud.php';
+}
+
 
 $array_carrusel = randomAnimals();
 $num = 0;
@@ -22,7 +33,11 @@ $estado_itemcarrusel = "active";
       </div>
     </div>
 
-
+    <?php
+    if(isset($msj)){
+      echo "<h2>$msj</h2>";
+    }
+    ?>
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 

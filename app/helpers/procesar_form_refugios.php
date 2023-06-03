@@ -20,11 +20,19 @@ $insert=insertRefugio($refugio);
 
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($insert) {
-  $msj="Datos insertados correctamente.";
+  echo "<script> alert('Datos insertados correctamente.');
+        window.location.href = '../content/inicio/carrusel_inicio.php';
+        </script>
+  ";
+  
   
 } else {
-  $msj= "Error al insertar datos: " . $stmt->errorInfo();
+  
+  echo "<script> alert('Error al insertar los datos');
+        window.location.href = '../content/inicio/carrusel_inicio.php';
+        </script>
+  ";
 }
 
-include_once("../content/registro/registro.php");
+
 ?>

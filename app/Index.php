@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,7 @@
     crossorigin="anonymous"></script>
   <script src="./js/menu-usuario.js"></script>
   <script src="./js/carrusel-animales.js"></script>
+
 
   <title>Pagina principal Adopciones</title>
 </head>
@@ -78,7 +80,7 @@
 
       <!--Menú del usuario-->
       <div class="user-container" id="user-menu">
-        <a id="registro" href=""><img id="fotouser" src="" alt="Foto del usuario" id="user-img"></a>
+        <a id="registro" href="#" class="modal-link" data-bs-toggle="modal" data-bs-target="#formularioModal"><img id="fotouser" src="" alt="Foto del usuario" id="user-img"></a>
         <div class="user-dropdown" id="user-menu">
           <ul>
             <li><a id="mi_perfil" href="">Mi perfil</a></li>
@@ -99,6 +101,27 @@
   </nav>
 
 </header>
+<body>
+
+<?php 
+// Ruta actual de la ventana
+$rutaActual = $_SERVER['REQUEST_URI'];
+
+// Expresión regular que deseas utilizar
+$expresionRegular = '#^/AdopcionesApp_3\.0/app/content/([^/]+)/([^/]+)/([^/]+)$#';
+
+// Comparar la ruta actual con la expresión regular
+if (preg_match($expresionRegular, $rutaActual,$matches)) {
+    include '../../registro/modal_registro.php';
+} else{
+    include '../registro/modal_registro.php';
+}
+
+
+
+
+
+?> 
 <script>
   
      // Obtener la URL actual de la ventana
@@ -329,7 +352,7 @@ switch (currentURL) {
   var linksoyasociacion = document.getElementById("registroRef");
   linksoyasociacion.href = urlsoyasociacion;
 
-  //Desplrgable Usuario
+  //Desplagable Usuario
   var linkconfusu = document.getElementById("conf_usu");
   linkconfusu.href = urlconfusu;
   var linkmiperfil = document.getElementById("mi_perfil");
@@ -341,9 +364,10 @@ switch (currentURL) {
 
   var linkblog = document.getElementById("blog");
   linkblog.href = urlblog;
-
-
- 
+  console.log(typeof(linkblog));
+  console.log(linkblog.href);
+  
+  
 
 
 </script>

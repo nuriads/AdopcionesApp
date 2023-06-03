@@ -5,10 +5,21 @@
  * Uso el Patrón Singleton :Un único objeto para la clase
  * Constructor privado, y métodos estáticos 
  */
-define('DB_SERVER','localhost');
-define('DB_USER','root');
-define('DB_PASSWD','');
-define('DATABASE','adopciones');
+if (!defined('DB_SERVER')) {
+    define('DB_SERVER', 'localhost');
+}
+
+if (!defined('DB_USER')) {
+    define('DB_USER', 'root');
+}
+
+if (!defined('DB_PASSWD')) {
+    define('DB_PASSWD', '');
+}
+
+if (!defined('DATABASE')) {
+    define('DATABASE', 'adopciones');
+}
 class AccesoDatos {
     
     private static $modelo = null;

@@ -1,5 +1,5 @@
 <?php
-include 'index.html';
+include 'index.php';
 ?>
 <?php echo " $msj"?>
 <div class='formulario_usuarios'>
