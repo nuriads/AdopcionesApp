@@ -1,8 +1,19 @@
 <?php
-include '../../index.html';
-include '../../models/AccesoDatos.php';
-include '../../models/Animal.php';
-include '../../models/crud/funcionesCrud.php';
+if (
+  strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
+  strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false
+) {
+      require_once '../index.php';
+      require_once '../models/AccesoDatos.php';
+      require_once '../models/Animal.php';
+      require_once '../models/crud/funcionesCrud.php';
+} elseif ($_SERVER['REQUEST_URI'] == '/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php') {
+      require_once '../../index.php';
+      require_once '../../models/AccesoDatos.php';
+      require_once '../../models/Animal.php';
+      require_once '../../models/crud/funcionesCrud.php';
+}
+
 
 $array_carrusel = randomAnimals();
 $num = 0;
@@ -22,7 +33,11 @@ $estado_itemcarrusel = "active";
       </div>
     </div>
 
-
+    <?php
+    if(isset($msj)){
+      echo "<h2>$msj</h2>";
+    }
+    ?>
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -49,7 +64,7 @@ $estado_itemcarrusel = "active";
             <div class="row">
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
@@ -61,7 +76,7 @@ $estado_itemcarrusel = "active";
               <?php $num = $num + 1 ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
@@ -73,7 +88,7 @@ $estado_itemcarrusel = "active";
               <?php $num = $num + 1 ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../..//assets/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
@@ -116,7 +131,7 @@ $estado_itemcarrusel = "active";
     <div class="col-md-4">
       <h2>Últimas adopciones</h2>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/Buddy.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/images/mascotas/adopciones/Buddy.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Buddy</h5>
           <p class="card-text">Raza: Labrador Retriever</p>
@@ -124,7 +139,7 @@ $estado_itemcarrusel = "active";
         </div>
       </div>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/Luna.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/images/mascotas/adopciones/Luna.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Luna</h5>
           <p class="card-text">Raza: Siamese</p>
@@ -132,7 +147,7 @@ $estado_itemcarrusel = "active";
         </div>
       </div>
       <div class="card mb-3">
-        <img src="../assets/mascotas/adopciones/prince.avif" class="card-img-top" alt="...">
+        <img src="../../../assets/images/mascotas/adopciones/prince.avif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Prince & Barbara</h5>
           <p class="card-text">Raza: Pareja de agapornis</p>

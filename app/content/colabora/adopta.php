@@ -1,5 +1,5 @@
 <?php
- include '../../index.html';
+ include '../../index.php';
 
 echo '<div style="text-align: center; margin-top: 50px; color: #00afa1">';
 echo '<h4 > Si estás interesado en ponerte en contacto con algún refugio como adoptante, rellena el siguiente formulario y nosotros haremos todo el trabajo!</h4>';

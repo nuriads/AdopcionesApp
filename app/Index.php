@@ -47,10 +47,10 @@
             <a href="#" class="nav-link dropdown-toggle" id="mascotasDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Colabora</a>
             <ul class="dropdown-menu" aria-labelledby="mascotasDropdown">
-              <li><a class="dropdown-item text-dark" href="adopta.php">Estoy interesado/a en adoptar</a></li>
-              <li><a class="dropdown-item text-dark" href="abuelitos.php">Adopta un abuelito</a></li>
-              <li><a class="dropdown-item text-dark" href="voluntariado.php">Voluntariado</a></li>
-              <li><a class="dropdown-item text-dark" href="registro.php">Soy un refugio o asociación</a></li>
+              <li><a id="adopta" class="dropdown-item text-dark" href="adopta.php">Estoy interesado/a en adoptar</a></li>
+              <li><a id="abuelitos" class="dropdown-item text-dark" href="abuelitos.php">Adopta un abuelito</a></li>
+              <li><a id="voluntariado" class="dropdown-item text-dark" href="voluntariado.php">Voluntariado</a></li>
+              <li><a id="registroRef" class="dropdown-item text-dark" href="registro.php">Soy un refugio o asociación</a></li>
             </ul>
           </li>
           <li class="nav-item">

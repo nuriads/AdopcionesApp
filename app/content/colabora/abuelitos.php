@@ -1,4 +1,4 @@
-<?php include '../../index.html'; ?>
+<?php include '../../index.php'; ?>
 
 <div id="contenido">
   <div class="voluntariado">

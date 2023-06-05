@@ -236,7 +236,9 @@ a:hover {
   color: #5EAE8F;
 }
 
-
+.botonInicioSesion{
+  color:#00afa1 ;
+}
 
 /*Formularios*/
 .formulario_abuelitos {
@@ -267,7 +269,9 @@ width: 100%;
   object-fit:cover;
 }
   
-
+.carousel-control-next, .carousel-control-prev{
+  width: 3%;
+}
 /*Voluntariado*/
 
 .voluntariado {
