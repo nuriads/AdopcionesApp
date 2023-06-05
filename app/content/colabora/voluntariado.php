@@ -1,6 +1,6 @@
 
 <?php
- include 'index.html';
+include '../../index.html';
  ?>
  <div id="contenido">
  <div class="voluntariado">

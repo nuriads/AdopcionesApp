@@ -1,8 +1,8 @@
 <?php
-include 'mascotas.php';
-include './models/AccesoDatos.php';
-include './models/Animal.php';
-include './models/crud/funcionesCrud.php';
+include './mascotas.php';
+include '../../models/AccesoDatos.php';
+include '../../models/Animal.php';
+include '../../models/crud/funcionesCrud.php';
 
 $array_hurones=getAnimales('hurón');
 ?>
@@ -15,7 +15,7 @@ $array_hurones=getAnimales('hurón');
 				<?php foreach ($array_hurones as $huron) : ?>
 			<div class="col-md-4 mb-4">
 				<div class="card">
-				<img src="<?php echo "../assets/mascotas/".$huron->especie."/".$huron->microchip.".avif"?>" class="card-img-top" alt=<?=$huron->nombre?>>
+				<img src="<?php echo "../../../assets/mascotas/".$huron->especie."/".$huron->microchip.".avif"?>" class="card-img-top" alt=<?=$huron->nombre?>>
 					<div class="card-body">
 						<h5 class="card-title"><?= $huron->nombre?></h5>
 						<p class="card-text">Edad: <?=$huron->fecha_nac?></p>

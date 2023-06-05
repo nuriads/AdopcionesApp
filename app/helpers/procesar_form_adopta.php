@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include '../models/conexion.php';
 
 // Procesar datos del formulario
 $email = $_POST['email'];

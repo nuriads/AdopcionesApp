@@ -1,5 +1,16 @@
-<?php
-include 'Index.html';
+<?php 
+
+
+
+if (strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
+    strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false) {
+    include '../index.html';
+    
+} elseif ($_SERVER['REQUEST_URI'] == '/AdopcionesApp_3.0/app/content/registro/registro.php') {
+    include '../../index.html';
+    
+}
+
 ?>
 
 <div class='menus-contacto'>
@@ -20,7 +31,7 @@ include 'Index.html';
       <label class="form-check-label" for="refugioSwitch">Soy un refugio o asociación</label>
     </div>
     <!-- Formulario para usuarios -->
-    <form id="usuarioForm" style="display:none;" action="procesar_form_usuario.php" method="POST">
+    <form id="usuarioForm" style="display:none;" action="../../helpers/procesar_form_usuario.php" method="POST">
       <!-- elementos del formulario para usuarios -->
 
       <h3 >Registro de usuarios</h3>
@@ -58,7 +69,7 @@ include 'Index.html';
     </form>
 
     <!-- Formulario para refugios -->
-    <form id="refugioForm" style="display:none;" action="procesar_form_refugios.php" method="POST">
+    <form id="refugioForm" style="display:none;" action="../../helpers/procesar_form_refugios.php" method="POST">
       <!-- elementos del formulario para refugios -->
       <h3 >Registro de refugios</h3>
 

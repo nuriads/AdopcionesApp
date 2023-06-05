@@ -1,8 +1,8 @@
 <?php
-include 'mascotas.php';
-include './models/AccesoDatos.php';
-include './models/Animal.php';
-include './models/crud/funcionesCrud.php';
+include './mascotas.php';
+include '../../models/AccesoDatos.php';
+include '../../models/Animal.php';
+include '../../models/crud/funcionesCrud.php';
 
 $array_perros=getAnimales('perro');
 ?>
@@ -15,7 +15,7 @@ $array_perros=getAnimales('perro');
 		<?php foreach ($array_perros as $perro) : ?>
 			<div class="col-md-4 mb-4">
 				<div class="card">
-					<img src="<?php echo "../assets/mascotas/".$perro->especie."/".$perro->microchip.".avif"?>" class="card-img-top" alt="<?= $perro->nombre?>">
+					<img src="<?php echo "../../../assets/mascotas/".$perro->especie."/".$perro->microchip.".avif"?>" class="card-img-top" alt="<?= $perro->nombre?>">
 					<div class="card-body">
 						<h5 class="card-title"><?= $perro->nombre?></h5>
 						<p class="card-text">Edad: <?=$perro->fecha_nac?></p>
