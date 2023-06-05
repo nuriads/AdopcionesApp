@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
   <script src="./js/menu-usuario.js"></script>
   <script src="./js/carrusel-animales.js"></script>
 
-  <!--<script src="./js/registro.js"></script>-->
+
   <title>Pagina principal Adopciones</title>
 </head>
 
@@ -37,24 +38,24 @@
             <a href="#" class="nav-link dropdown-toggle" id="mascotasDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Mascotas</a>
             <ul class="dropdown-menu" aria-labelledby="mascotasDropdown">
-              <li><a id="gatos" class="dropdown-item text-dark" href="gatos.php">Gatos</a></li>
-              <li><a id="perros" class="dropdown-item text-dark" href="perros.php">Perros</a></li>
-              <li><a id="hurones" class="dropdown-item text-dark" href="hurones.php">Hurones</a></li>
-              <li><a id="otros" class="dropdown-item text-dark" href="otros-animales.php">Otros</a></li>
+              <li><a id="gatos" class="dropdown-item text-dark" href="">Gatos</a></li>
+              <li><a id="perros" class="dropdown-item text-dark" href="">Perros</a></li>
+              <li><a id="hurones" class="dropdown-item text-dark" href="">Hurones</a></li>
+              <li><a id="otros" class="dropdown-item text-dark" href="">Otros</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="mascotasDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Colabora</a>
             <ul class="dropdown-menu" aria-labelledby="mascotasDropdown">
-              <li><a id="adopta" class="dropdown-item text-dark" href="adopta.php">Estoy interesado/a en adoptar</a></li>
-              <li><a id="abuelitos" class="dropdown-item text-dark" href="abuelitos.php">Adopta un abuelito</a></li>
-              <li><a id="voluntariado" class="dropdown-item text-dark" href="voluntariado.php">Voluntariado</a></li>
-              <li><a id="registroRef" class="dropdown-item text-dark" href="registro.php">Soy un refugio o asociación</a></li>
+              <li><a id="adopta" class="dropdown-item text-dark" href="">Estoy interesado/a en adoptar</a></li>
+              <li><a id="abuelitos" class="dropdown-item text-dark" href="">Adopta un abuelito</a></li>
+              <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
+              <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a id="blog" class="nav-link" aria-current="page" href="./content/blog/blog.php">Blog</a>
+            <a id="blog" class="nav-link" aria-current="page" href="">Blog</a>
           </li>
         </ul>
         <div class="row">
@@ -79,11 +80,11 @@
 
       <!--Menú del usuario-->
       <div class="user-container" id="user-menu">
-        <a id="registro" href=""><img id="fotouser" src="../../../assets/images/foto-user.jpg" alt="Foto del usuario" id="user-img"></a>
+        <a id="registro" href="#" class="modal-link" data-bs-toggle="modal" data-bs-target="#formularioModal"><img id="fotouser" src="" alt="Foto del usuario" id="user-img"></a>
         <div class="user-dropdown" id="user-menu">
           <ul>
-            <li><a id="mi_perfil" href="./desplegable_usuario/mi_perfil.php">Mi perfil</a></li>
-            <li><a id="conf_usu" href="./desplegable_usuario/conf_usuario.php">Configuración</a></li>
+            <li><a id="mi_perfil" href="">Mi perfil</a></li>
+            <li><a id="conf_usu" href="">Configuración</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle">Más opciones</a>
               <ul class="dropdown-menu">
@@ -92,7 +93,7 @@
                 <li><a href="#">Opción 3</a></li>
               </ul>
             </li>
-            <li><a id="cerrar_sesion" href="./desplegable_usuario/cerrar_sesion.php">Cerrar sesión</a></li>
+            <li><a id="cerrar_sesion" href="">Cerrar sesión</a></li>
           </ul>
         </div>
       </div>
@@ -100,6 +101,27 @@
   </nav>
 
 </header>
+<body>
+
+<?php 
+// Ruta actual de la ventana
+$rutaActual = $_SERVER['REQUEST_URI'];
+
+// Expresión regular que deseas utilizar
+$expresionRegular = '#^/AdopcionesApp_3\.0/app/content/([^/]+)/([^/]+)/([^/]+)$#';
+
+// Comparar la ruta actual con la expresión regular
+if (preg_match($expresionRegular, $rutaActual,$matches)) {
+    include '../../registro/modal_registro.php';
+} else{
+    include '../registro/modal_registro.php';
+}
+
+
+
+
+
+?> 
 <script>
   
      // Obtener la URL actual de la ventana
@@ -129,8 +151,8 @@ switch (currentURL) {
  
   case 'http://localhost/AdopcionesApp_3.0/app/':
     urlestilos='../assets/style.css';
-    urluser = '../assets/images/foto-user.jpg';
-    urllogo = '../assets/images/logo4.PNG';
+    urluser = '../assets/images/users/avatardefault.png';
+    urllogo = '../assets/images/logos/logo4.PNG';
     urlindex='./content/inicio/carrusel_inicio.php';
     urlgatos='';
     urlperros='';
@@ -148,8 +170,8 @@ switch (currentURL) {
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -171,8 +193,8 @@ switch (currentURL) {
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/otros-animales.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
     urlestilos='../../../assets/style.css'; 
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='./gatos.php';
     urlperros='./perros.php';
@@ -192,8 +214,8 @@ switch (currentURL) {
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
     urlestilos='../../../assets/style.css'; 
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -211,8 +233,8 @@ switch (currentURL) {
     break;
     case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -230,8 +252,8 @@ switch (currentURL) {
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro.php':
     urlestilos='../../../assets/style.css';
-    urluser = '../../../assets/images/foto-user.jpg';
-    urllogo = '../../../assets/images/logo4.PNG';
+    urluser = '../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../assets/images/logos/logo4.PNG';
     urlindex='../inicio/carrusel_inicio.php';
     urlgatos='../mascotas/gatos.php';
     urlperros='../mascotas/perros.php';
@@ -250,8 +272,8 @@ switch (currentURL) {
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_refugios.php':
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_usuario.php':
     urlestilos='../../assets/style.css';
-    urluser = '../../assets/images/foto-user.jpg';
-    urllogo = '../../assets/images/logo4.PNG';
+    urluser = '../../assets/images/users/avatardefault.png';
+    urllogo = '../../assets/images/logos/logo4.PNG';
     urlindex='../content/inicio/carrusel_inicio.php';
     urlgatos='../content/mascotas/gatos.php';
     urlperros='../content/mascotas/perros.php';
@@ -267,8 +289,25 @@ switch (currentURL) {
     urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
     urlblog='../content/blog/blog.php';
       break;
- 
-   
+    case 'http://localhost/AdopcionesApp_3.0/app/content/blog/articulos/articulo_kala.php':
+    urlestilos='../../../../assets/style.css';
+    urluser = '../../../../assets/images/users/avatardefault.png';
+    urllogo = '../../../../assets/images/logos/logo4.PNG';
+    urlindex='../../inicio/carrusel_inicio.php';
+    urlgatos='../../mascotas/gatos.php';
+    urlperros='../../mascotas/perros.php';
+    urlhurones='../../mascotas/hurones.php';
+    urlotros='../../mascotas/otros-animales.php';
+    urladopta='../../colabora/adopta.php';
+    urlabuelitos='../../colabora/abuelitos.php';
+    urlvoluntariado='../../colabora/voluntariado.php';
+    urlregistro='../../registro/registro.php';
+    urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urlmiperfil='../../desplegable_usuario/mi_perfil.php';
+    urlconfusu='../../desplegable_usuario/conf_usuario.php';
+    urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
+    urlblog='../blog.php';
+    break;
 }
   
 // Pongo los valores de cada variable en el href o src del elemento html correspondiente
@@ -313,7 +352,7 @@ switch (currentURL) {
   var linksoyasociacion = document.getElementById("registroRef");
   linksoyasociacion.href = urlsoyasociacion;
 
-  //Desplrgable Usuario
+  //Desplagable Usuario
   var linkconfusu = document.getElementById("conf_usu");
   linkconfusu.href = urlconfusu;
   var linkmiperfil = document.getElementById("mi_perfil");
@@ -325,13 +364,14 @@ switch (currentURL) {
 
   var linkblog = document.getElementById("blog");
   linkblog.href = urlblog;
-
-
- 
+  console.log(typeof(linkblog));
+  console.log(linkblog.href);
+  
+  
 
 
 </script>
-<!--<script type="text/javascript" src="./js/rutas-index.js"></script>-->
+
 </body>
 
 </html>
