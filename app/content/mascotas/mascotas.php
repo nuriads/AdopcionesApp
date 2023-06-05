@@ -5,7 +5,7 @@ include '../../index.php';
 <!--Submenu mascotas.php-->
 <body class="bodyform">
 <div class="container-fluid " >
-<nav class='submenu-mascotas'>
+<!-- <nav class='submenu-mascotas'>
 
   <ul>
     <li><a href="gatos.php">Gatos</a></li>
@@ -13,7 +13,7 @@ include '../../index.php';
     <li><a href="hurones.php">Hurones</a></li>
     <li><a href="otros-animales.php">Otros</a></li>
   </ul>
-</nav>
+</nav> -->
 
 
 
