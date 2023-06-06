@@ -2,6 +2,42 @@
  include '../../index.php';
  ?>
 
+<style>
+  .card-header {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+  }
+
+  .card-header a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .card-body {
+    background-color: #fff;
+    padding: 1rem;
+   
+  }
+
+  .btn {
+    background-color: #e9ecef;
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .btn:hover {
+    background-color: #dee2e6;
+  }
+
+  .collapse.show {
+    display: block;
+  }
+</style>
+
 <div class="container mt-3">
   <h2>Listado de refugios y asociaciones</h2>
 
