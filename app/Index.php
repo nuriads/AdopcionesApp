@@ -1,4 +1,9 @@
-
+<?php
+//Para que redirija al carrusel directamente si la ventana está en index.php
+if($_SERVER['REQUEST_URI']=='/AdopcionesApp_3.0/app/'){
+  header('location:./content/inicio/carrusel_inicio.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,10 +113,10 @@
 // Ruta actual de la ventana
 $rutaActual = $_SERVER['REQUEST_URI'];
 
-// Expresión regular que deseas utilizar
+// Expresión regular 
 $expresionRegular = '#^/AdopcionesApp_3\.0/app/content/([^/]+)/([^/]+)/([^/]+)$#';
 
-// Comparar la ruta actual con la expresión regular
+// Compara la ruta actual con la expresión regular
 if (preg_match($expresionRegular, $rutaActual,$matches)) {
     include '../../registro/modal_registro.php';
 } else{
