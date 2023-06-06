@@ -52,6 +52,7 @@
               <li><a id="abuelitos" class="dropdown-item text-dark" href="">Adopta un abuelito</a></li>
               <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
               <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li>
+              <li><a id="donativos" class="dropdown-item text-dark" href="">Donativos</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -145,7 +146,7 @@ var urlmiperfil;
 var urlconfusu;
 var urlcerrarsesion;
 var urlblog;
-
+var urldonativos;
 // Verificar la URL actual y asignar los valores correspondientes utilizando un switch
 switch (currentURL) {
  
@@ -163,6 +164,7 @@ switch (currentURL) {
     urlvoluntariado='';
     urlregistro='./content/registro/registro.php';
     urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos;
     urlmiperfil='';
     urlconfusu='';
     urlcerrarsesion='';
@@ -182,6 +184,7 @@ switch (currentURL) {
     urlvoluntariado='../colabora/voluntariado.php';
     urlregistro='../registro/registro.php';
     urlsoyasociacion='../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../desplegable_usuario/mi_perfil.php';
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -205,6 +208,7 @@ switch (currentURL) {
     urlvoluntariado='../colabora/voluntariado.php';
     urlregistro='../registro/registro.php';
     urlsoyasociacion='../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../desplegable_usuario/mi_perfil.php';
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -213,6 +217,7 @@ switch (currentURL) {
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/adopta.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
+ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
     urlestilos='../../../assets/style.css'; 
     urluser = '../../../assets/images/users/avatardefault.png';
     urllogo = '../../../assets/images/logos/logo4.PNG';
@@ -226,6 +231,7 @@ switch (currentURL) {
     urlvoluntariado='./voluntariado.php';
     urlregistro='../registro/registro.php';
     urlsoyasociacion='../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../desplegable_usuario/mi_perfil.php';
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -245,6 +251,7 @@ switch (currentURL) {
     urlvoluntariado='../colabora/voluntariado.php';
     urlregistro='../registro/registro.php';
     urlsoyasociacion='../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../desplegable_usuario/mi_perfil.php';
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -264,6 +271,7 @@ switch (currentURL) {
     urlvoluntariado='../colabora/voluntariado.php';
     urlregistro='../registro/registro.php';
     urlsoyasociacion='./registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../desplegable_usuario/mi_perfil.php';
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -284,6 +292,7 @@ switch (currentURL) {
     urlvoluntariado='../content/colabora/voluntariado.php';
     urlregistro='../content/registro/registro.php';
     urlsoyasociacion='../content/registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../colabora/donativos.php';
     urlmiperfil='../content/desplegable_usuario/mi_perfil.php';
     urlconfusu='../content/desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
@@ -303,6 +312,7 @@ switch (currentURL) {
     urlvoluntariado='../../colabora/voluntariado.php';
     urlregistro='../../registro/registro.php';
     urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
+    urldonativos='../../colabora/donativos.php';
     urlmiperfil='../../desplegable_usuario/mi_perfil.php';
     urlconfusu='../../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
@@ -351,6 +361,8 @@ switch (currentURL) {
   linkvoluntariado.href = urlvoluntariado;
   var linksoyasociacion = document.getElementById("registroRef");
   linksoyasociacion.href = urlsoyasociacion;
+  var linkdonativos = document.getElementById("donativos");
+  linkdonativos.href = urldonativos;
 
   //Desplagable Usuario
   var linkconfusu = document.getElementById("conf_usu");
