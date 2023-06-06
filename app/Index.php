@@ -57,6 +57,7 @@ if($_SERVER['REQUEST_URI']=='/AdopcionesApp_3.0/app/'){
               <li><a id="abuelitos" class="dropdown-item text-dark" href="">Adopta un abuelito</a></li>
               <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
               <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li>
+              <li><a id="refugiosView" class="dropdown-item text-dark" href="">Listado de refugios</a></li>
               <li><a id="donativos" class="dropdown-item text-dark" href="">Donativos</a></li>
             </ul>
           </li>
@@ -174,6 +175,7 @@ switch (currentURL) {
     urlconfusu='';
     urlcerrarsesion='';
     urlblog='';
+    urlrefugiosView='';
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
     urlestilos='../../../assets/style.css';
@@ -194,6 +196,7 @@ switch (currentURL) {
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
     urlblog='../blog/blog.php';
+    
     break;
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/perros.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/gatos.php':
@@ -223,6 +226,7 @@ switch (currentURL) {
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
  case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
+ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
     urlestilos='../../../assets/style.css'; 
     urluser = '../../../assets/images/users/avatardefault.png';
     urllogo = '../../../assets/images/logos/logo4.PNG';
@@ -241,6 +245,7 @@ switch (currentURL) {
     urlconfusu='../desplegable_usuario/conf_usuario.php';
     urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
     urlblog='../blog/blog.php';
+    urlrefugiosView = '../colabora/refugiosView.php';
     break;
     case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
     urlestilos='../../../assets/style.css';
@@ -368,6 +373,8 @@ switch (currentURL) {
   linksoyasociacion.href = urlsoyasociacion;
   var linkdonativos = document.getElementById("donativos");
   linkdonativos.href = urldonativos;
+  var linkrefugiosview = document.getElementById("refugiosView");
+  linkrefugiosview.href = urlrefugiosView;
 
   //Desplagable Usuario
   var linkconfusu = document.getElementById("conf_usu");
