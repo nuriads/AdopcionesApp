@@ -15,7 +15,57 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <ul class="list-group">
+
+      <li class="list-group-item"><h6>A.D.A.N.A.</h2>
+      <p>Apdo. de Correos, nº 466 / 29680 Estepona
+       Estepona - 29680 Estepona
+       Andalucía</p>
+       <i class="fa fa-envelope" aria-hidden="true"></i>
+      adoptions@adana.es
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      <a href="http://www.adana.es/">http://www.adana.es/</a><br>
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      952 113 467
+    </li>
+
+
+    <li class="list-group-item"><h6>A.P.A.R.I.V. Protectora Rincón Victoria</h2>
+      <p>Rincón de la Victoria</p>
+       <i class="fa fa-envelope" aria-hidden="true"></i>
+      apariv@billnot.com
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      <a href="http://www.apariv.org/">http://www.apariv.org/</a><br>
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      657 219 269 / 628 676 764
+    </li>
+
+
+
+    <li class="list-group-item"><h6>ARCA Jaén</h2>
+      <p>C/ De los Almetriches, nº 1 bajo (Detrás del Polideportivo de la Salobreja) / 23001 Jaén
+- 23001 Jaén</p>
+       <i class="fa fa-envelope" aria-hidden="true"></i>
+       arcajaen@ono.com
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      <a href="http://arcajaen.org//">http://arcajaen.org/</a><br>
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      953 236 374 / 653 918 795
+    </li>
+
+    <li class="list-group-item"><h6>Sociedad Protectora de Animales y Plantas de Cádiz -Refugio Kimba</h2>
+      <p>Apartado de Correos 2768 / 11080 Cádiz
+- 11080 Cádiz</p>
+       <i class="fa fa-envelope" aria-hidden="true"></i>
+       informacion@refugiokimba.org
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      <a href="http://www.refugiokimba.org/">http://www.refugiokimba.org/</a><br>
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      618 166 443 / 679 968 900
+    </li>
+
+
+    </ul>
             </div>
           </div>
         </div>
