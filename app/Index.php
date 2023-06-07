@@ -246,7 +246,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urladopta='./adopta.php';
  urlabuelitos='./abuelitos.php';
  urlvoluntariado='./voluntariado.php';
- urlrefugios='./colabora/refugiosView.php';
+ urlrefugios='./refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
