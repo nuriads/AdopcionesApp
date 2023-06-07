@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-echo 'cerrar_sesion.php'
+header('location:../inicio/carrusel_inicio.php');
 
 ?>
