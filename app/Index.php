@@ -116,6 +116,8 @@ session_start();
 <body>
 
 <?php 
+
+//ESRTABLECEMOS LAS RUTAS PARA EL MENÚ SEGÚN DONDE NOS ENCONTREMOS
 // Ruta actual de la ventana
 $rutaActual = $_SERVER['REQUEST_URI'];
 
@@ -128,9 +130,6 @@ if (preg_match($expresionRegular, $rutaActual,$matches)) {
 } else{
     include '../registro/modal_registro.php';
 }
-
-
-
 
 
 ?> 
@@ -437,9 +436,6 @@ var linkblog = document.getElementById("blog");
 linkblog.href = urlblog;
 console.log(typeof(linkblog));
 console.log(linkblog.href);
-
-
-
 
 </script>
 

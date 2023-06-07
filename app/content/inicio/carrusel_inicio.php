@@ -39,15 +39,6 @@ $estado_itemcarrusel = "active";
       echo "<h2>$msj</h2>";
     }
     ?>
-    <?php 
-    if (isset($_SESSION['rol'])) {
-    echo $_SESSION['rol'];
-    }else{
-      echo "rol no existe";
-      
-    }
-    ?>
-      
     
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
