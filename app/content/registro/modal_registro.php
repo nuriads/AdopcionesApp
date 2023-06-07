@@ -41,6 +41,13 @@ if (
     border-color: #00afa1;
     box-shadow: 2px 2px 5px #00afa1;
   }
+  #error_inicio_sesion{
+  padding: 5%;
+  border-radius: 5px;
+  background-color: rgba(247, 111, 111, 0.15);
+  color: red;
+  font-size:0.9rem;
+}
 </style>
 
 
@@ -54,13 +61,14 @@ if (
       <div class="modal-body">
       <div class='menus-contacto'>
   <div>
-    <?php
-    if (isset($msj)) {
-      echo "<h2>$msj</h2>";
-    }
-    ?>
-    
+ 
     <h3>¡Bienvenido/a!</h3>
+
+    <?php if (isset($_SESSION['mensaje_error'])) : ?>
+    <div id="error_inicio_sesion">
+      <p>&#9888<?=$_SESSION['mensaje_error']?></p>
+    </div>
+  <?php endif; ?>
     
     <div class="registro-inicio-sesion">
       <span class="registro-tab">Registro</span>
@@ -155,7 +163,7 @@ if (
 
      <!-- Formulario Inicio de sesión -->
      <div id="formSesion" style="display:none;">
-                <form id="sesionForm" action="../hola.php" method="POST">
+                <form id="sesionForm" action="../../helpers/procesar_inicio_sesion.php" method="POST">
                    
                    <div class="form-group">
           <label for="email">Email address</label>

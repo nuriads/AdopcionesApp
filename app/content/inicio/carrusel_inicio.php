@@ -34,10 +34,21 @@ $estado_itemcarrusel = "active";
     </div>
 
     <?php
+    
     if(isset($msj)){
       echo "<h2>$msj</h2>";
     }
     ?>
+    <?php 
+    if (isset($_SESSION['rol'])) {
+    echo $_SESSION['rol'];
+    }else{
+      echo "rol no existe";
+      
+    }
+    ?>
+      
+    
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -157,7 +168,45 @@ $estado_itemcarrusel = "active";
     </div>
   </div>
 </div><!--Fin contenido index-->
+<script src="../../js/registro.js"></script>
+// Verificar si existe la variable de sesión 'mensaje_error'
+<?php if (isset($_SESSION['mensaje_error'])) : ?>
+<script>
 
+    // Abrir el modal
+ 
+    $(document).ready(function() {
+  $('#formularioModal').modal('show');
+  //Obtengo el elemento de cierre del modal
+  var closeBtn = document.getElementsByClassName("btn-close")[0];
+
+  // Agrego un evento de click al botón de cierre del modal
+closeBtn.addEventListener("click", function() {
+  // Envía una solicitud AJAX para eliminar la variable de sesión
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "../../helpers/eliminar_variable_sesion.php", true);
+  // Compruebo que la eliminación de la variable de sesión se haya realizado correctamente y si es así, refresco la página.
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // La variable de sesión se ha eliminado correctamente
+        location.reload(); // Refresca la página
+      } else {
+        // Ocurrió un error al eliminar la variable de sesión
+        console.error("Error al eliminar la variable de sesión.");
+      }
+    }
+  };
+
+  
+  xhr.send();
+});
+
+  
+});
+
+</script>
+<?php endif; ?>
 </body>
 
 </html>

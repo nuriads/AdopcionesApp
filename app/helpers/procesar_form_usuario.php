@@ -4,7 +4,14 @@ include '../models/AccesoDatos.php';
 include '../models/Usuario.php';
 include '../models/crud/funcionesCrud.php';
 
-$msj="";
+//Inicio sesion o recupero la sesion si ya está iniciada
+
+session_start();
+//Borro el mensaje de error si anteriormente existia
+if(isset($_SESSION["mensaje_error"])){
+  unset($_SESSION["mensaje_error"]);
+}
+
 
 //Creo objeto usuario
 $user= new Usuario();
@@ -22,18 +29,14 @@ $insert=insertUser($user);
 
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($insert) {
-  echo "<script> alert('Datos insertados correctamente.');
-        window.location.href = '../content/inicio/carrusel_inicio.php';
-        </script>
-  ";
-  
+  $_SESSION["mensaje"]="Registro Completado";
+  $_SESSION["rol"]="usuario";
+  header("Location: ../content/desplegable_usuario/mi_perfil.php");
   
 } else {
   
-  echo "<script> alert('Error al insertar los datos');
-        window.location.href = '../content/inicio/carrusel_inicio.php';
-        </script>
-  ";
+  $_SESSION["mensaje_error"]="Error al insertar los datos en la base de datos, el email ya existe";
+  header("Location: ../content/inicio/carrusel_inicio.php");
 }
 
 ?>

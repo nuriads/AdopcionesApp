@@ -1,4 +1,5 @@
 <?php
+
 //FUNCIONES CRUD REFUGIO
 function insertRefugio($refugio):bool{
     // Creo una nueva conexión e inserto el refugio en la BBDD
@@ -10,13 +11,63 @@ function insertRefugio($refugio):bool{
 
 //FUNCIONES CRUD USUARIO
 function insertUser($user):bool{
-    // Creo una nueva conexión e inserto el refugio en la BBDD
+    // Creo una nueva conexión e inserto el usuario en la BBDD
     $midb = AccesoDatos::getModelo();
     $insert=$midb->insertUsu($user);
     
     return $insert;
 }
 
+function getUser($email){
+    // Creo una nueva conexión
+    $midb = AccesoDatos::getModelo();
+    $user=$midb->getUsuario($email);
+    return $user;
+}
+//Checkeo que el usuario y la contraseña son correctos y si está haciendo login un refugio o un usuario
+function userOk($email,$clave,$rol){
+    $ok=false;
+      // Creo una nueva conexión
+      $midb = AccesoDatos::getModelo();
+      //Compruebo si es refugio o usuario normal para consultar en una tabla o en otra
+      if($rol=='usuario'){
+        $user=$midb->getUsuario($email);
+      }else if($rol=='refugio'){
+        $user=$midb->getRefugio($email);
+      }
+     
+    if($user!=false){
+           //Compruebo si la contraseña que ha introducido el usuario($clave) es igual a la contraseña de la BBDD (la que ahora está en el objeto usuario $user->contrasena)
+        if($user->contrasena!=$clave){
+            $ok=false;  
+        }else{
+            $ok=true;  
+        }
+    }
+    return $ok;
+}
+
+//Devuelve el rol, y si no está el email en la BBDD devuelve una cadena vacía
+function getUserRol($email){
+    $rol='';
+      // Creo una nueva conexión
+      $midb = AccesoDatos::getModelo();
+      //Cojo el usuario de la BBDD o falso si no está el usuario
+      $user=$midb->getUsuario($email);
+
+    //Si el usuario devuelve falso miro si el usuario está el la tabla de refugios
+    if($user==false){
+        $user=$midb->getRefugio($email);
+        //Si el usuario es distinto de false es que es un refugio
+        if($user!=false){
+            $rol='refugio';
+        }
+    }else{
+       $rol='usuario';
+
+    }
+    return $rol;
+}
 //FUNCIONES CRUD ANIMALES
 function insertAnimal($animal):bool{
     // Creo una nueva conexión e inserto el refugio en la BBDD

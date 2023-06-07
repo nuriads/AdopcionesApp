@@ -85,7 +85,20 @@ class AccesoDatos {
         return $resu;
     }
 */
-
+    //GET USUARIO Devuelvo un usuario o false
+    public function getUsuario ($email) {
+        $usu = false;
+        $stmt_usu   = $this->dbh->prepare("select * from usuario where email=:email");
+        
+        $stmt_usu->setFetchMode(PDO::FETCH_CLASS, 'usuario');
+        $stmt_usu->bindParam(':email', $email);
+        if ( $stmt_usu->execute() ){
+             if ( $obj = $stmt_usu->fetch()){
+                $usu= $obj;
+            }
+        }
+        return $usu;
+    }
     //INSERT USUARIO
     public function insertUsu($user):bool{
        
@@ -99,9 +112,28 @@ class AccesoDatos {
         $stmt_crearuser->bindValue(4,$user->nick);
         $stmt_crearuser->bindValue(5,$user->contrasena);
         $stmt_crearuser->bindValue(6,$user->intereses);    
-        $stmt_crearuser->execute();
+        try{
+            $stmt_crearuser->execute();
+        }catch(Exception $e){
+            return false;
+        }
+        
         $resu = ($stmt_crearuser->rowCount () == 1);
         return $resu;
+    }
+
+    //GET REFUGIO
+    public function getRefugio ($email) {
+        $usu = false;
+        $stmt_usu   = $this->dbh->prepare("select * from refugio where email=:email");
+        $stmt_usu->setFetchMode(PDO::FETCH_CLASS, 'refugio');
+        $stmt_usu->bindParam(':email', $email);
+        if ( $stmt_usu->execute() ){
+             if ( $obj = $stmt_usu->fetch()){
+                $usu= $obj;
+            }
+        }
+        return $usu;
     }
 
     //INSERT REFUGIO
@@ -116,7 +148,12 @@ class AccesoDatos {
         $stmt_crearRef->bindValue(4,$refugio->telefono);
         $stmt_crearRef->bindValue(5,$refugio->email);
         $stmt_crearRef->bindValue(6,$refugio->contrasena);    
-        $stmt_crearRef->execute();
+        try{
+            $stmt_crearRef->execute();
+        }catch(Exception $e){ //Capturo la excepción para que si da error no salte la excepción.
+            return false;
+        }
+        
         $resu = ($stmt_crearRef->rowCount () == 1);
         return $resu;
     }

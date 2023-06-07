@@ -3,6 +3,8 @@
 if($_SERVER['REQUEST_URI']=='/AdopcionesApp_3.0/app/'){
   header('location:./content/inicio/carrusel_inicio.php');
 }
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +19,7 @@ if($_SERVER['REQUEST_URI']=='/AdopcionesApp_3.0/app/'){
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/menu-usuario.js"></script>
   <script src="./js/carrusel-animales.js"></script>
 
@@ -284,6 +287,7 @@ switch (currentURL) {
     break;
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_refugios.php':
     case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_usuario.php':
+    case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_inicio_sesion.php':
     urlestilos='../../assets/style.css';
     urluser = '../../assets/images/users/avatardefault.png';
     urllogo = '../../assets/images/logos/logo4.PNG';
