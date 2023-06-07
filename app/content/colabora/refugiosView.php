@@ -1,25 +1,137 @@
-<?php
- include '../../index.php';
- ?>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!---//////////////////////////-->
+
+  <?php
+include '../../index.php';
+// Establecer la conexión a la base de datos
+$connection = mysqli_connect('localhost', 'root', '', 'adopciones');
+
+// Verificar si hay errores de conexión
+if (!$connection) {
+  die("Error de conexión: " . mysqli_connect_error());
+}
+?>
+
+<style>
+  .list-group-item:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+  }
+</style>
 
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="accordion" id="accordionExample">
+        <?php
+        // Query para obtener las comunidades autónomas
+        $queryComunidades = "SELECT DISTINCT comunidad FROM refugio";
+        $resultComunidades = mysqli_query($connection, $queryComunidades);
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Andalucía
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-            
+        // Recorrer las comunidades autónomas
+        while ($rowComunidad = mysqli_fetch_assoc($resultComunidades)) {
+          $comunidad = $rowComunidad['comunidad'];
+          echo '<div class="accordion-item">';
+          echo '<h2 class="accordion-header">';
+          echo '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' . $comunidad . '" aria-expanded="false" aria-controls="collapse' . $comunidad . '">';
+          echo $comunidad;
+          echo '</button>';
+          echo '</h2>';
+          echo '<div id="collapse' . $comunidad . '" class="accordion-collapse collapse" data-bs-parent="#accordionExample">';
+          echo '<div class="accordion-body">';
+          echo '<ul class="list-group">';
+          
+          // Query para obtener los refugios de la comunidad autónoma actual
+          $queryRefugios = "SELECT * FROM refugio WHERE comunidad = '$comunidad'";
+          $resultRefugios = mysqli_query($connection, $queryRefugios);
+
+          // Recorrer los resultados de la consulta
+          while ($rowRefugio = mysqli_fetch_assoc($resultRefugios)) {
+            $nomRefugio = $rowRefugio['nom_refugio'];
+            $direccion = $rowRefugio['direccion'];
+            $telefono = $rowRefugio['telefono'];
+            $email = $rowRefugio['email'];
+            $web = $rowRefugio['web'];
+
+            // Imprimir los datos del refugio
+            echo '<li class="list-group-item">';
+            echo '<h6>' . $nomRefugio . '</h6>';
+            echo '<p>' . $direccion . '</p>';
+            echo '<i class="fa fa-envelope" aria-hidden="true"></i>' . $email . '<br>';
+            echo '<i class="fa fa-globe" aria-hidden="true"></i><a href="' . $web . '">' . $web . '</a><br>';
+            echo '<i class="fa fa-phone" aria-hidden="true"></i>' . $telefono;
+            echo '</li>';
+          }
+
+          echo '</ul>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--Listado de refugios-->
-    <ul class="list-group">
+   <!--  <ul class="list-group">
       <li class="list-group-item"><h6>A.D.A.N.A.</h2>
       <p>Apdo. de Correos, nº 466 / 29680 Estepona
        Estepona - 29680 Estepona
@@ -63,10 +175,10 @@
       <i class="fa fa-phone" aria-hidden="true"></i>
       618 166 443 / 679 968 900
     </li>
-    </ul>
+    </ul> -->
 <!--Fin listado de refugios-->    
 
-            </div>
+           <!--  </div>
           </div>
         </div>
 
@@ -78,14 +190,14 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-
+ -->
               <!--Listado de refugios-->
-    <ul class="list-group">
+   <!--  <ul class="list-group">
       <li class="list-group-item"><h6>Alborada Protectora Aragonesa de Animales</h2>
       <p>Zaragoza -
 Aragon</p>
        <i class="fa fa-envelope" aria-hidden="true"></i>
-       protectoraalborada@gmail.com 
+       protectoraalborada@gmail.com <br>
       <i class="fa fa-globe" aria-hidden="true"></i>
       <a href="http://www.protectoraalborada.org">http://www.protectoraalborada.org</a><br>
       <i class="fa fa-phone" aria-hidden="true"></i>
@@ -125,9 +237,9 @@ Aragon</p>
       <i class="fa fa-phone" aria-hidden="true"></i>
       618 166 443 / 679 968 900
     </li>
-    </ul>
+    </ul> -->
 <!--Fin listado de refugios--> 
-            </div>
+            <!-- </div>
           </div>
         </div>
 
@@ -142,10 +254,10 @@ Aragon</p>
               <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Additional accordion items -->
-        <div class="accordion-item">
+        <!-- <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               Cantabria
@@ -291,8 +403,8 @@ Aragon</p>
 
       </div>
     </div>
-  </div>
-</div>
+  </div>-->
+</div> 
 
 <!-- <?php
  include '../../footer.php';
