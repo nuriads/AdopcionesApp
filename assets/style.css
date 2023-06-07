@@ -379,3 +379,27 @@ img {
 
 
 /*refugiosView*/
+
+.accordion-item, .accordion-header{
+background-color: transparent;
+border-color: #FFC720;
+margin-bottom: 10px;
+box-shadow: 2px 2px 5px #FFC720;
+padding: 0;
+
+}
+
+.accordion-button{
+width: 100%;
+height: 60px;
+}
+
+
+.accordion-button:focus {
+    background-color: #fb9ee7; /* Cambia el color a tu elección */
+}
+
+  .accordion-button:not(.collapsed) {
+    background-color: #fb9ee7; /* Cambia el color a tu elección */
+    border-color: #FFC720;
+}
