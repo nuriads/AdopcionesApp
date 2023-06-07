@@ -27,6 +27,10 @@ if (!$connection) {
   .list-group-item:hover {
     background-color: rgba(211, 211, 211, 0.5);
   }
+
+  .accordion-button:hover {
+    background-color: #fb9ee7;
+  }
 </style>
 
 <div class="container mt-3">
@@ -67,6 +71,7 @@ if (!$connection) {
             echo '<li class="list-group-item">';
             echo '<h6>' . $nomRefugio . '</h6>';
             echo '<p>' . $direccion . '</p>';
+            echo '<p>' . $comunidad . '</p>';
             echo '<i class="fa fa-envelope" aria-hidden="true"></i>' . $email . '<br>';
             echo '<i class="fa fa-globe" aria-hidden="true"></i><a href="' . $web . '">' . $web . '</a><br>';
             echo '<i class="fa fa-phone" aria-hidden="true"></i>' . $telefono;
