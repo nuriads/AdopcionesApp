@@ -24,8 +24,8 @@ $refugio->telefono = $_POST['telefono'];
 $refugio->web = $_POST['web'];
 $refugio->email = $_POST['email'];
 $refugio->contrasena = $_POST['contrasena'];
-$refugio->contrasena = $_POST['web'];
-$refugio->contrasena = $_POST['comunidad'];
+$refugio->web = $_POST['web'];
+$refugio->comunidad = $_POST['comunidad'];
 
 //Inserto los datos en la base de datos
 $insert=insertRefugio($refugio);
