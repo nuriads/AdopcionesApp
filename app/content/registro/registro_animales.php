@@ -13,7 +13,7 @@ include '../../index.php';
 </head>
 <body>
 <div class='menus-contacto'>
-<?php if (($_SESSION['rol'])=='usuario') : ?>
+<?php if (isset($_SESSION['rol'])&&($_SESSION['rol'])=='usuario') : ?>
 <h1>Zona exclusiva de refugios</h1>
 <?php endif; ?>
 
