@@ -158,6 +158,7 @@ var urlconfusu;
 var urlcerrarsesion;
 var urlblog;
 var urldonativos;
+var urlrefugios;
 // Verificar la URL actual y asignar los valores correspondientes utilizando un switch
 switch (currentURL) {
 
@@ -180,6 +181,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/':
  urlconfusu='';
  urlcerrarsesion='';
  urlblog='';
+ urlrefugios='';
  break;
 case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
  urlestilos='../../../assets/style.css';
@@ -193,6 +195,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php'
  urladopta='../colabora/adopta.php';
  urlabuelitos='../colabora/abuelitos.php';
  urlvoluntariado='../colabora/voluntariado.php';
+ urlrefugios='../colabora/refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -200,6 +203,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php'
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlblog='../blog/blog.php';
+
  break;
 case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/perros.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/gatos.php':
@@ -217,6 +221,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
  urladopta='../colabora/adopta.php';
  urlabuelitos='../colabora/abuelitos.php';
  urlvoluntariado='../colabora/voluntariado.php';
+ urlrefugios='../colabora/refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -229,6 +234,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/adopta.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
+case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
  urllogo = '../../../assets/images/logos/logo4.PNG';
@@ -240,6 +246,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
  urladopta='./adopta.php';
  urlabuelitos='./abuelitos.php';
  urlvoluntariado='./voluntariado.php';
+ urlrefugios='./colabora/refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -260,6 +267,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
  urladopta='../colabora/adopta.php';
  urlabuelitos='../colabora/abuelitos.php';
  urlvoluntariado='../colabora/voluntariado.php';
+ urlrefugios='../colabora/refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -280,6 +288,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urladopta='../colabora/adopta.php';
  urlabuelitos='../colabora/abuelitos.php';
  urlvoluntariado='../colabora/voluntariado.php';
+ urlrefugios='../colabora/refugiosView.php';
  urlregistro='../registro/registro.php';
  urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -302,6 +311,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urladopta='../content/colabora/adopta.php';
  urlabuelitos='../content/colabora/abuelitos.php';
  urlvoluntariado='../content/colabora/voluntariado.php';
+ urlrefugios='../colabora/refugiosView.php';
  urlregistro='../content/registro/registro.php';
  urlsoyasociacion='../content/registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
@@ -322,6 +332,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urladopta='../../colabora/adopta.php';
  urlabuelitos='../../colabora/abuelitos.php';
  urlvoluntariado='../../colabora/voluntariado.php';
+ urlrefugios='../../colabora/refugiosView.php';
  urlregistro='../../registro/registro.php';
  urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../../colabora/donativos.php';
@@ -375,7 +386,8 @@ var linksoyasociacion = document.getElementById("registroRef");
 linksoyasociacion.href = urlsoyasociacion;
 var linkdonativos = document.getElementById("donativos");
 linkdonativos.href = urldonativos;
-
+var linkrefugios = document.getElementById("refugiosView");
+linkrefugios.href = urlrefugios;
 //Desplagable Usuario
 var linkconfusu = document.getElementById("conf_usu");
 linkconfusu.href = urlconfusu;
