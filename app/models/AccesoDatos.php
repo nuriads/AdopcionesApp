@@ -140,14 +140,16 @@ class AccesoDatos {
     public function insertRefugio($refugio):bool{
        
         $stmt_crearRef  = $this->dbh->prepare(
-            "INSERT INTO `refugio`( `nif`, `nom_refugio`, `direccion`, `telefono`, `email`, `contrasena`)".
-            "Values(?,?,?,?,?,?)");
+            "INSERT INTO `refugio`( `nif`, `nom_refugio`, `direccion`, `telefono`, `email`, `contrasena`,`web`,`comunidad`)".
+            "Values(?,?,?,?,?,?,?,?)");
         $stmt_crearRef->bindValue(1,$refugio->nif);
         $stmt_crearRef->bindValue(2,$refugio->nom_refugio);
         $stmt_crearRef->bindValue(3,$refugio->direccion);
         $stmt_crearRef->bindValue(4,$refugio->telefono);
         $stmt_crearRef->bindValue(5,$refugio->email);
-        $stmt_crearRef->bindValue(6,$refugio->contrasena);    
+        $stmt_crearRef->bindValue(6,$refugio->contrasena);  
+        $stmt_crearRef->bindValue(7,$refugio->web);    
+        $stmt_crearRef->bindValue(8,$refugio->comunidad);      
         try{
             $stmt_crearRef->execute();
         }catch(Exception $e){ //Capturo la excepción para que si da error no salte la excepción.
