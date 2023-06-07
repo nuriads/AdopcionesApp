@@ -13,6 +13,10 @@ include '../../index.php';
 </head>
 <body>
 <div class='menus-contacto'>
+<?php if (($_SESSION['rol'])=='usuario') : ?>
+<h1>Zona exclusiva de refugios</h1>
+<?php endif; ?>
+
     <!--Si no está iniciada sesión se muestra el formulario de registro para refugios o asociaciones.-->
     <?php if (!isset($_SESSION['rol'])) : ?>
        
@@ -57,7 +61,7 @@ include '../../index.php';
 
     <?php endif; ?>
     <!--Si está iniciada sesión se muestra el formulario para que puedan subir las mascotas a la base de datos.-->
-    <?php if (isset($_SESSION['rol'])) : ?>
+    <?php if (isset($_SESSION['rol'])&&$_SESSION['rol']=='refugio') : ?>
 <!-- Formulario para animales -->
 <form id="refugioForm"  action="../../helpers/procesar_form_subirMascota.php" method="POST">
         <!-- elementos del formulario para animales -->
