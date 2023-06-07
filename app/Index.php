@@ -49,6 +49,7 @@
               aria-expanded="false">Colabora</a>
             <ul class="dropdown-menu" aria-labelledby="mascotasDropdown">
               <li><a id="adopta" class="dropdown-item text-dark" href="">Estoy interesado/a en adoptar</a></li>
+              <li><a id="adopta" class="dropdown-item text-dark" href="">Refugios y asociaciones</a></li>
               <li><a id="abuelitos" class="dropdown-item text-dark" href="">Adopta un abuelito</a></li>
               <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
               <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li>
@@ -66,7 +67,7 @@
       </div>
       <!--Barra de búsqueda-->
       <div class="row ms-auto me-2">
-        <form class="form-inline" action='./helpers/busqueda.php' method='GET'>
+        <form class="form-inline" action='../../helpers/busqueda.php' method='GET'>
           <input class='search' class="form-control mr-sm-2" type="search" placeholder="Search" name='query' aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" id="boton-busqueda" value="Buscar" type="submit">Buscar</button>
 

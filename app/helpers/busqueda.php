@@ -7,10 +7,10 @@
 
     // Mostrar los resultados
     if (!empty($resultados)) {
-        echo "<h3>Resultados de la búsqueda para '$query':</h3>";
-        foreach ($resultados as $resultado) {
+       
+        /* foreach ($resultados as $resultado) {
             echo "<p>$resultado</p>";
-        }
+        } */
     } else {
         echo "<p>No se encontraron resultados para '$query'.</p>";
     }
@@ -30,9 +30,14 @@
         foreach ($terminos as $termino) {
             if (stripos($termino, $query) !== false) {
                 $resultados[] = $termino;
+               
             }
+           
         }
-    
+
+        if($resultados[0] == 'gato'){
+            header("Location: ../content/mascotas/gatos.php");
+        }
         return $resultados;
     }
     ?>
