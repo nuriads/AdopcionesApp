@@ -145,10 +145,20 @@ if (
           <label for="direccion">Dirección:</label>
           <input type="direccion" name="direccion" class="form-control" id="direccion" placeholder="Introduce la dirección" required><br>
         </div>
+        <div class="form-group">
+          <label for="comunidad">Comunidad Autónoma:</label>
+          <input type="comunidad" name="comunidad" class="form-control" id="comunidad" placeholder="Introduce la Comunidad Autónoma" required><br>
+        </div>
+
 
         <div class="form-group">
           <label for="telefono">Teléfono:</label>
           <input type="telephone" name="telefono" class="form-control" id="telefono" placeholder="Introduce el teléfono" required><br>
+        </div>
+
+        <div class="form-group">
+          <label for="web">Web:</label>
+          <input type="text" name="web" class="form-control" id="web" placeholder="Web" required><br>
         </div>
 
         <div class="form-group">

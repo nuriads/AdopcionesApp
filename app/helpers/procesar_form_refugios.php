@@ -19,7 +19,9 @@ $refugio= new Refugio();
 $refugio->nif = $_POST['nif'];
 $refugio->nom_refugio= $_POST['nom_refugio'];
 $refugio->direccion = $_POST['direccion'];
+$refugio->comunidad = $_POST['comunidad'];
 $refugio->telefono = $_POST['telefono'];
+$refugio->web = $_POST['web'];
 $refugio->email = $_POST['email'];
 $refugio->contrasena = $_POST['contrasena'];
 
