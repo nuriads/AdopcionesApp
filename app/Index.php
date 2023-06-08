@@ -353,6 +353,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlblog='../blog.php';
  break;
  case 'http://localhost/AdopcionesApp_3.0/app/content/desplegable_usuario/mi_perfil.php':
+  case 'http://localhost/AdopcionesApp_3.0/app/content/desplegable_usuario/gestion_animales.php':
   urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
  urllogo = '../../../assets/images/logos/logo4.PNG';

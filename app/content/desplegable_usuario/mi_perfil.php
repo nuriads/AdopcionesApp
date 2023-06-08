@@ -1,5 +1,11 @@
-<?php 
+<?php
 include '../../index.php';
+include '../../models/AccesoDatos.php';
+include '../../models/Animal.php';
+include '../../models/crud/funcionesCrud.php';
+
+$array_gatos = getAnimales('gato');
+$fechaActual = getdate();
 
 //Borro el mensaje de error si anteriormente existia
 if (isset($_SESSION["mensaje_error"])) {
@@ -44,7 +50,9 @@ if (isset($_SESSION["mensaje_error"])) {
             </div>
             <div class="form-group">
               <label for="rol">Rol</label>
-              <input type="phone" class="form-control" id="telefono" value="<?php if ($_SESSION['rol'] = "usuario") { echo "Adoptante"; } ?>" readonly>
+              <input type="phone" class="form-control" id="telefono" value="<?php if ($_SESSION['rol'] = "usuario") {
+                                                                              echo "Adoptante";
+                                                                            } ?>" readonly>
             </div>
           </div>
           <div class="card-footer"><button type="submit" class="btn btn-primary">Editar</button></div>
@@ -104,7 +112,7 @@ if (isset($_SESSION["mensaje_error"])) {
 <?php endif; ?>
 
 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'refugio') : ?>
- 
+
   <div class="container">
     <h2>Mi cuenta</h2>
     <?php if (isset($_SESSION['mensaje'])) : ?>
@@ -142,16 +150,37 @@ if (isset($_SESSION["mensaje_error"])) {
         </div>
 
       </div>
+      <!---->
       <div class="col-md-8">
         <div class="card">
           <div class="card-header">Mascotas en adopción</div>
           <div class="card-body">
+            <div class="container">
+              <div class="row">
 
+                <!-- Tarjeta de animal bucle -->
+                <?php foreach ($array_gatos as $gato) : ?>
+                  <?php $ano = substr($gato->fecha_nac, 0, 4);
+                  $mes = substr($gato->fecha_nac, 5, 2);
+                  $dia = substr($gato->fecha_nac, 8, 2); ?>
+                  <div style="height: 150px; margin-bottom:25px" class="col-md-2 gatocard">
+                    <div style="height: 100%" class="card">
+                      <img style="height: 100px;" src="<?php echo "../../../assets/images/mascotas/" . $gato->especie . "/" . $gato->microchip . ".avif" ?>" class="card-img-top" alt=<?= $gato->nombre ?>>
+                      <div class="card-body">
+                        <h5 style="font-size:1rem" class="card-title"><?= $gato->nombre ?></h5>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach ?>
+              </div>
+            </div>
+            <div class="card-footer"><a href="./gestion_animales.php">Gestionar</a></div>
           </div>
-          <div class="card-footer"><button type="submit" class="btn btn-primary">Gestionar</button></div>
+
         </div>
 
       </div>
+
       <div class="col-md-4">
         <div class="card">
           <div class="card-header">Opciones de cuenta</div>
@@ -159,9 +188,6 @@ if (isset($_SESSION["mensaje_error"])) {
             <ul class="list-group">
               <li class="list-group-item">Cambiar contraseña</li>
               <li class="list-group-item">Actualizar información</li>
-              <li class="list-group-item">Gestionar Mascotas en adopción</li>
-              <li class="list-group-item">Mis mascotas</li>
-              <li class="list-group-item">Mis favoritos</li>
               <li class="list-group-item">Cerrar sesión</li>
             </ul>
 
@@ -173,31 +199,19 @@ if (isset($_SESSION["mensaje_error"])) {
 
       </div>
 
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Preferencias de adopción</div>
-          <div class="card-body">
-
-          </div>
-          <div class="card-footer"></div>
-        </div>
-
-      </div>
-
     </div>
 
+
   </div>
-  </div>
+
 <?php endif;
 
 
 ?>
 <div class="container-fluid ">
-<?php 
+  <?php
 
-include_once '../inicio/footer.php';
+  include_once '../inicio/footer.php';
 
-?>
+  ?>
 </div>
-
-

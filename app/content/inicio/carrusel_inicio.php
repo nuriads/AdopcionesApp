@@ -160,7 +160,7 @@ $estado_itemcarrusel = "active";
   </div>
 </div><!--Fin contenido index-->
 <script src="../../js/registro.js"></script>
-// Verificar si existe la variable de sesión 'mensaje_error'
+<!--Verificar si existe la variable de sesión 'mensaje_error'-->
 <?php if (isset($_SESSION['mensaje_error'])) : ?>
 <script>
 
