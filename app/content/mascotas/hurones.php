@@ -28,3 +28,12 @@ $array_hurones=getAnimales('hurón');
 			
        </div>
     </div>
+
+
+	<div class="container-fluid ">
+	<?php 
+
+	include_once '../inicio/footer.php';
+
+	?>
+	</div>

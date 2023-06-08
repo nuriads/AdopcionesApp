@@ -100,3 +100,11 @@ include '../../models/crud/funcionesCrud.php';
             
        </div>
     </div>
+
+	<div class="container-fluid ">
+	<?php 
+
+	include_once '../inicio/footer.php';
+
+	?>
+	</div>

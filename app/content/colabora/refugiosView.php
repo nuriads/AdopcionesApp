@@ -1,27 +1,13 @@
 
-
-
-
-
-
-
-
-
-
-
-
-  <!---//////////////////////////-->
-
   <?php
 include '../../index.php';
-// Establecer la conexión a la base de datos
+//Conexión a la bd
 $connection = mysqli_connect('localhost', 'root', '', 'adopciones');
-
-// Verificar si hay errores de conexión
 if (!$connection) {
   die("Error de conexión: " . mysqli_connect_error());
 }
 ?>
+
 
 <style>
   .list-group-item:hover {
@@ -33,10 +19,15 @@ if (!$connection) {
   }
 </style>
 
+
+
+
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="accordion" id="accordionExample">
+
         <?php
         // Query para obtener las comunidades autónomas
         $queryComunidades = "SELECT DISTINCT comunidad FROM refugio";
@@ -90,12 +81,21 @@ if (!$connection) {
 </div>
 
 
+
+
+
   
 
 
 
 
+<div class="container-fluid ">
+	<?php 
 
+	include_once '../inicio/footer.php';
+
+	?>
+	</div>
 
 
 

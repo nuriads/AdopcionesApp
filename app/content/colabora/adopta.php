@@ -44,7 +44,13 @@ echo '</div>';
 </div>
 </div>
 
+<div class="container-fluid ">
+	<?php 
 
+	include_once '../inicio/footer.php';
+
+	?>
+	</div>
 
 <!--Procesar mensaje de éxito o error-->
 <script>
@@ -77,5 +83,6 @@ echo '</div>';
     .catch(error => console.error(error));
   });
 </script>
+
 
 

@@ -188,4 +188,16 @@ if (isset($_SESSION["mensaje_error"])) {
 
   </div>
   </div>
-<?php endif; ?>
+<?php endif;
+
+
+?>
+<div class="container-fluid ">
+<?php 
+
+include_once '../inicio/footer.php';
+
+?>
+</div>
+
+
