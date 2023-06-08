@@ -101,6 +101,14 @@ include '../../index.php';
     </div>
     <?php endif; ?>
     </div>
+
+    <div class="container-fluid ">
+	<?php 
+
+	include_once '../inicio/footer.php';
+
+	?>
+	</div>
 </body>
 </html>
 
