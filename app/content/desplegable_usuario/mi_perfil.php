@@ -2,9 +2,14 @@
 include '../../index.php';
 include '../../models/AccesoDatos.php';
 include '../../models/Animal.php';
+include '../../models/Refugio.php';
+include '../../models/Usuario.php';
 include '../../models/crud/funcionesCrud.php';
 
-$array_gatos = getAnimales('gato');
+$email=$_SESSION['email'];
+$refugio=getRefugio($email);
+$user=getUser($email);
+$array_animales = getAnimalesRefugio($refugio->nif);
 $fechaActual = getdate();
 
 //Borro el mensaje de error si anteriormente existia
@@ -38,15 +43,15 @@ if (isset($_SESSION["mensaje_error"])) {
             <br>
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" value="John Doe" readonly>
+              <input type="text" class="form-control" id="nombre" value="<?=$user->nombre?>" readonly>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" value="johndoe@example.com" readonly>
+              <input type="email" class="form-control" id="email" value="<?=$user->email?>"  readonly>
             </div>
             <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input type="phone" class="form-control" id="telefono" value="1234-567-89" readonly>
+              <label for="telefono">Nick</label>
+              <input type="phone" class="form-control" id="telefono" value="<?=$user->nick?> " readonly>
             </div>
             <div class="form-group">
               <label for="rol">Rol</label>
@@ -131,15 +136,15 @@ if (isset($_SESSION["mensaje_error"])) {
             <br>
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" value="John Doe" readonly>
+              <input type="text" class="form-control" id="nombre" value="<?=$refugio->nom_refugio?>" readonly>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" value="johndoe@example.com" readonly>
+              <input type="email" class="form-control" id="email" value="<?=$refugio->email?>" readonly>
             </div>
             <div class="form-group">
               <label for="telefono">Teléfono</label>
-              <input type="phone" class="form-control" id="telefono" value="1234-567-89" readonly>
+              <input type="phone" class="form-control" id="telefono" value="<?=$refugio->telefono?>" readonly>
             </div>
             <div class="form-group">
               <label for="rol">Rol</label>
@@ -159,15 +164,15 @@ if (isset($_SESSION["mensaje_error"])) {
               <div class="row">
 
                 <!-- Tarjeta de animal bucle -->
-                <?php foreach ($array_gatos as $gato) : ?>
-                  <?php $ano = substr($gato->fecha_nac, 0, 4);
-                  $mes = substr($gato->fecha_nac, 5, 2);
-                  $dia = substr($gato->fecha_nac, 8, 2); ?>
+                <?php foreach ($array_animales as $animal) : ?>
+                  <?php $ano = substr($animal->fecha_nac, 0, 4);
+                  $mes = substr($animal->fecha_nac, 5, 2);
+                  $dia = substr($animal->fecha_nac, 8, 2); ?>
                   <div style="height: 150px; margin-bottom:25px" class="col-md-2 gatocard">
                     <div style="height: 100%" class="card">
-                      <img style="height: 100px;" src="<?php echo "../../../assets/images/mascotas/" . $gato->especie . "/" . $gato->microchip . ".avif" ?>" class="card-img-top" alt=<?= $gato->nombre ?>>
+                      <img style="height: 100px;" src="<?php echo "../../../assets/images/mascotas/" . $animal->especie . "/" . $animal->microchip . ".avif" ?>" class="card-img-top" alt=<?= $animal->nombre ?>>
                       <div class="card-body">
-                        <h5 style="font-size:1rem" class="card-title"><?= $gato->nombre ?></h5>
+                        <h5 style="font-size:1rem" class="card-title"><?= $animal->nombre ?></h5>
                       </div>
                     </div>
                   </div>

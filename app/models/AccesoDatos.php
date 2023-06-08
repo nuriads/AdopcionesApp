@@ -126,7 +126,7 @@ class AccesoDatos {
     public function getRefugio ($email) {
         $usu = false;
         $stmt_usu   = $this->dbh->prepare("select * from refugio where email=:email");
-        $stmt_usu->setFetchMode(PDO::FETCH_CLASS, 'refugio');
+        $stmt_usu->setFetchMode(PDO::FETCH_CLASS, 'Refugio');
         $stmt_usu->bindParam(':email', $email);
         if ( $stmt_usu->execute() ){
              if ( $obj = $stmt_usu->fetch()){
@@ -225,12 +225,28 @@ class AccesoDatos {
         return $tanimals;
     }
 
-     // SELECT ANIMAL Devuelvo un animal o false
+     // SELECT ANIMALes 
      public function getAnimales (string $especie){
         $array_animales = [];
         $stmt_animal   = $this->dbh->prepare("select * from animal where especie=:especie");
         $stmt_animal->setFetchMode(PDO::FETCH_CLASS, 'animal');
         $stmt_animal->bindParam(':especie', $especie);
+        if ( $stmt_animal->execute() ){
+            while ( $animal = $stmt_animal->fetch()){
+               $array_animales[]= $animal;
+            }
+        }
+
+        // Devuelvo el array de animales
+        return $array_animales;
+    }
+
+    // SELECT TODOS LOS ANIMALES DE UN REFUGIO
+    public function getAnimalesRefugio(string $refugio){
+        $array_animales = [];
+        $stmt_animal   = $this->dbh->prepare("select * from animal where nif_refugio=:refugio");
+        $stmt_animal->setFetchMode(PDO::FETCH_CLASS, 'animal');
+        $stmt_animal->bindParam(':refugio', $refugio);
         if ( $stmt_animal->execute() ){
             while ( $animal = $stmt_animal->fetch()){
                $array_animales[]= $animal;

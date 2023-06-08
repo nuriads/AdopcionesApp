@@ -169,6 +169,7 @@ var urlblog;
 var urldonativos;
 var urlrefugios;
 var urlmiperfil;
+var urlregistroanimal;
 // Verificar la URL actual y asignar los valores correspondientes utilizando un switch
 switch (currentURL) {
 
@@ -192,6 +193,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/':
  urlcerrarsesion='';
  urlblog='';
  urlrefugios='';
+ urlregistroanimal='';
  break;
 case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php':
  urlestilos='../../../assets/style.css';
@@ -212,6 +214,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php'
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
 
  break;
@@ -238,6 +241,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
  
  break;
@@ -264,6 +268,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
  break;
  case 'http://localhost/AdopcionesApp_3.0/app/content/blog/blog.php':
@@ -284,6 +289,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urldonativos='../colabora/donativos.php';
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlblog='#';
  break;
@@ -306,6 +312,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
  break;
  case 'http://localhost/AdopcionesApp_3.0/app/helpers/procesar_form_refugios.php':
@@ -329,6 +336,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlconfusu='../content/desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../content/blog/blog.php';
    break;
  case 'http://localhost/AdopcionesApp_3.0/app/content/blog/articulos/articulo_kala.php':
@@ -350,10 +358,12 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlconfusu='../../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../../desplegable_usuario/registro_animales.php';
  urlblog='../blog.php';
  break;
  case 'http://localhost/AdopcionesApp_3.0/app/content/desplegable_usuario/mi_perfil.php':
   case 'http://localhost/AdopcionesApp_3.0/app/content/desplegable_usuario/gestion_animales.php':
+  case 'http://localhost/AdopcionesApp_3.0/app/content/desplegable_usuario/registro_animales.php':
   urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
  urllogo = '../../../assets/images/logos/logo4.PNG';
@@ -372,6 +382,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
  
  break;

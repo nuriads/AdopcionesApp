@@ -5,9 +5,9 @@ class Refugio{
     private $direccion;	
     private $telefono;	
     private $email;
-    private $contrasena;
     private $web;
     private $comunidad;
+    private $contrasena;
     
 
     

@@ -25,6 +25,7 @@ if ( !empty( $_POST['email']) && !empty($_POST['contrasena'])){
     if ( userOk($_POST['email'],$_POST['contrasena'],$rol)&& $rol!=""){
     
       $_SESSION['rol']=$rol;
+      $_SESSION['email']=$_POST['email'];
       $_SESSION['mensaje']="Bienvenido/a de nuevo!";
       header("Location: ../content/desplegable_usuario/mi_perfil.php");
       

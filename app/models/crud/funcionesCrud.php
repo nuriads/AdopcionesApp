@@ -9,6 +9,14 @@ function insertRefugio($refugio):bool{
     return $insert;
 }
 
+function getRefugio($email){
+    // Creo una nueva conexión
+    $midb = AccesoDatos::getModelo();
+    $ref=$midb->getRefugio($email);
+    return $ref;
+}
+//
+
 //FUNCIONES CRUD USUARIO
 function insertUser($user):bool{
     // Creo una nueva conexión e inserto el usuario en la BBDD
@@ -88,6 +96,12 @@ function getAnimal($microchip):Animal{
 function getAnimales($especie){
     $midb = AccesoDatos::getModelo();
     $array_animales=$midb->getAnimales($especie);
+    return $array_animales;
+}
+
+function getAnimalesRefugio($refugio){
+    $midb = AccesoDatos::getModelo();
+    $array_animales=$midb->getAnimalesRefugio($refugio);
     return $array_animales;
 }
 
