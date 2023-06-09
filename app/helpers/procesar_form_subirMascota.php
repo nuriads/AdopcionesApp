@@ -35,6 +35,9 @@ $animal->tamano = $_POST['tamano'];
 $animal->peso = $_POST['peso'];
 $animal->descripcion = $_POST['descripcion'];
 
+//POR HACER--Subo la imagen a la carpeta del servidor
+$ruta="../../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'];
+        $resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
 
 //Inserto los datos en la base de datos
 $insert=insertanimal($animal);
@@ -50,5 +53,30 @@ if ($insert) {
   header("Location:Location: ../content/desplegable_usuario/registro_animales.php");
 }
 
+function checkImagen(array $imagen){
+
+
+  $msg="";
+  $limitebytes=1000000;
+ if($imagen["size"]>0){
+
+     if($imagen["error"]>0){
+         $msg.= "Error, no se subió la imagen";
+     }   
+
+    if($imagen["size"]>$limitebytes){
+        $msg.="error, la imagen debe pesar menos de 1000kb";
+    }
+    if($imagen["type"] != "image/jpeg"){
+        $msg.="Error, la imagen debe ser .jpg";
+      
+    }
+
+
+ }
+ 
+  
+  return $msg;
+}
 
 ?>

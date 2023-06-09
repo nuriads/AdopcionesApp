@@ -97,12 +97,17 @@ include '../../index.php';
               <input type="number" name="peso" min="1" placeholder="Kg (aprox)">
             </div>
             <br>
-
+            <div class="form-group">
+          <label for="formFileSm" class="form-label">Subir foto:</label>
+          <input  type="file" class="form-control form-control-sm" name="imagen" id="formFileSm" accept="image/jpeg"/>
+</div>
+            <br>
             <div class="form-group">
               <label for="tamano">Descripción:</label><br>
               <textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <br>
+ 
             <button type="submit" class='btn btn-primary' value="Registrarse">Submit</button>
 
           </form>
