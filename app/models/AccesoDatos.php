@@ -191,7 +191,11 @@ class AccesoDatos {
         $stmt_crearAnimal->bindValue(8, $animal->tamano);
         $stmt_crearAnimal->bindValue(9, $animal->peso);
         $stmt_crearAnimal->bindValue(10, $animal->descripcion);
+        try{
         $stmt_crearAnimal->execute();
+        }catch(Exception $e){
+            return false;
+        }
         $resu = ($stmt_crearAnimal->rowCount() == 1);
         return $resu;
     }
