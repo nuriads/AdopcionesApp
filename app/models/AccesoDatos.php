@@ -178,8 +178,8 @@ class AccesoDatos {
     public function insertAnimal($animal): bool
     {
         $stmt_crearAnimal  = $this->dbh->prepare(
-            "INSERT INTO `animal`( `microchip`, `nif_refugio`, `especie`, `raza`, `nombre`, `sexo`,`fecha_nac`,`tamano`,`peso`)" .
-            "Values(?,?,?,?,?,?,?,?,?)"
+            "INSERT INTO `animal`( `microchip`, `nif_refugio`, `especie`, `raza`, `nombre`, `sexo`,`fecha_nac`,`tamano`,`peso`, `descripcion`)" .
+            "Values(?,?,?,?,?,?,?,?,?,?)"
         );
         $stmt_crearAnimal->bindValue(1, $animal->microchip);
         $stmt_crearAnimal->bindValue(2, $animal->nif_refugio);
@@ -190,6 +190,7 @@ class AccesoDatos {
         $stmt_crearAnimal->bindValue(7, $animal->fecha_nac);
         $stmt_crearAnimal->bindValue(8, $animal->tamano);
         $stmt_crearAnimal->bindValue(9, $animal->peso);
+        $stmt_crearAnimal->bindValue(10, $animal->descripcion);
         $stmt_crearAnimal->execute();
         $resu = ($stmt_crearAnimal->rowCount() == 1);
         return $resu;

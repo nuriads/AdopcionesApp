@@ -10,6 +10,7 @@ class Animal {
     private $fecha_nac;
     private $tamano;
     private $peso;
+    private $descripcion;
     
 
     

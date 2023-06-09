@@ -22,6 +22,9 @@ session_start();
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   <script src="./js/menu-usuario.js"></script>
   <script src="./js/carrusel-animales.js"></script>
 
@@ -101,7 +104,6 @@ session_start();
         <!--Para cuando SÍ está la sesión iniciada-->
         <?php if (isset($_SESSION['rol'])) : ?>
         <a id="iconoUser" href="" ><img id="fotouser" src="" alt="Foto del usuario" id="user-img"></a>
-        <?php endif; ?>
 
         <div class="user-dropdown" id="user-menu">
           <ul>
@@ -118,6 +120,11 @@ session_start();
             <li><a id="cerrar_sesion" href="">Cerrar sesión</a></li>
           </ul>
         </div>
+
+
+        <?php endif; ?>
+
+       
       </div>
     </div>
   </nav>

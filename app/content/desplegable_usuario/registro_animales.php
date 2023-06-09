@@ -31,32 +31,54 @@ include '../../index.php';
 
         <div class="form-group">
           <label for="nom_refugio">Nombre mascota</label>
-          <input type="nom_refugio" name="nom_refugio" class="form-control" id="nom_refugio" placeholder="Introduce el nombre del refugio">
+          <input type="nom_refugio" name="nom_refugio" class="form-control" id="nom_refugio" placeholder="Nombre del animal">
         </div>
         <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce el email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="">Especie</label>
+          <input type="especie" name="especie" class="form-control" id="especie" aria-describedby="especieHelp" placeholder="Especie">
         </div>
         <div class="form-group">
-          <label for="nif">Nif</label>
-          <input type="nif" name="nif" class="form-control" id="nif" placeholder="Introduce el nif del refugio">
+          <label for="raza">raza</label>
+          <input type="raza" name="raza" class="form-control" id="raza" placeholder="Raza">
         </div>
+        <br>
         <div class="form-group">
-          <label for="direccion">Dirección:</label>
-          <input type="direccion" name="direccion" class="form-control" id="direccion" placeholder="Introduce la dirección" required><br>
+        <label for="raza">Fecha de nacimiento:</label>
+        <input id="datepicker" width="276" />
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap5'
+        });
+    </script>
         </div>
+        
+        <div class="form-group dropdown">
+          <label for="sexo">Sexo:</label><br>
+          <select class="btn btn-secondary dropdown-toggle" name="sexo" id="sexo">
+          <option class="dropdown-item" value="hembra">Hembra</option>
+        <option class="dropdown-item" value="macho">Macho</option>
+          </select> 
+        </div>
+        
+       
+       
+        <div class="form-group">
+        <label for="tamano">Tamaño:</label><br>
+          <select class="btn btn-secondary dropdown-toggle" name="tamano" id="sexo">
+          <option class="dropdown-item" value="mini">Mini</option>
+        <option class="dropdown-item" value="pequeño">Pequeño</option>
+        <option class="dropdown-item" value="mediano">Mediano</option>
+        <option class="dropdown-item" value="grande">Grande</option>
+        <option class="dropdown-item" value="grande">Gigante</option>
+          </select> 
+        </div>
+        <br>
 
         <div class="form-group">
-          <label for="telefono">Teléfono:</label>
-          <input type="telephone" name="telefono" class="form-control" id="telefono" placeholder="Introduce el teléfono" required><br>
+        <label for="tamano">Descripción:</label><br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
-
-        <div class="form-group">
-          <label for="contrasena">Contraseña:</label>
-          <input type="password" name="contrasena" class="form-control" id="contrasena" placeholder="Introduce la contraseña" required><br>
-        </div>
-
+        <br>
         <button type="submit" class='btn btn-primary' value="Registrarse">Submit</button>
 
       </form>
