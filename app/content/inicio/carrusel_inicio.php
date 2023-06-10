@@ -66,7 +66,7 @@ $estado_itemcarrusel = "active";
             <div class="row">
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
@@ -78,7 +78,7 @@ $estado_itemcarrusel = "active";
               <?php $num = $num + 1 ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
@@ -90,7 +90,7 @@ $estado_itemcarrusel = "active";
               <?php $num = $num + 1 ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".avif" ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
                     <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
