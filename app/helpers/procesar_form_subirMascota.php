@@ -34,11 +34,16 @@ $animal->sexo = $_POST['sexo'];
 $animal->tamano = $_POST['tamano'];
 $animal->peso = $_POST['peso'];
 $animal->descripcion = $_POST['descripcion'];
+$animal->extension_imagen = substr($_FILES["imagen"]["type"],6);
  //Comprobar la extensión de la imagen
- $ext_img=substr($_FILES["imagen"]["type"],7);
- $animal->$extension_imagen=$ext_img;
+ $ext_img=substr($_FILES["imagen"]["type"],6);
+ $animal->$extension_imagen=substr($_FILES["imagen"]["type"],6);
  
-
+ echo  $ext_img;
+ echo "<br>";
+ echo $_FILES["imagen"]["type"];
+ echo "<br>";
+ echo   $animal->$extension_imagen;
 //Inserto los datos en la base de datos
 $insert=insertanimal($animal);
 
@@ -49,7 +54,12 @@ if ($insert) {
  //Subo la imagen a la carpeta del servidor
 $ruta="../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'].".".$ext_img;
 $resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-header("Location: ../content/desplegable_usuario/registro_animales.php");
+echo  $ext_img;
+echo "<br>";
+echo $_FILES["imagen"]["type"];
+echo "<br>";
+echo   $animal->$extension_imagen;
+//header("Location: ../content/desplegable_usuario/registro_animales.php");
 } else {
   
   $_SESSION["mensaje_error_subida"]="Error al insertar los datos en la base de datos, el microchip del animal ya está en nuestra Base de Datos";

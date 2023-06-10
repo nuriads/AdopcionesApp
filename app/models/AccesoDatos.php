@@ -178,8 +178,8 @@ class AccesoDatos {
     public function insertAnimal($animal): bool
     {
         $stmt_crearAnimal  = $this->dbh->prepare(
-            "INSERT INTO `animal`( `microchip`, `nif_refugio`, `especie`, `raza`, `nombre`, `sexo`,`fecha_nac`,`tamano`,`peso`, `descripcion`)" .
-            "Values(?,?,?,?,?,?,?,?,?,?)"
+            "INSERT INTO `animal`( `microchip`, `nif_refugio`, `especie`, `raza`, `nombre`, `sexo`,`fecha_nac`,`tamano`,`peso`, `descripcion`, `extension_imagen`)" .
+            "Values(?,?,?,?,?,?,?,?,?,?,?)"
         );
         $stmt_crearAnimal->bindValue(1, $animal->microchip);
         $stmt_crearAnimal->bindValue(2, $animal->nif_refugio);
@@ -191,7 +191,8 @@ class AccesoDatos {
         $stmt_crearAnimal->bindValue(8, $animal->tamano);
         $stmt_crearAnimal->bindValue(9, $animal->peso);
         $stmt_crearAnimal->bindValue(10, $animal->descripcion);
-        try{
+        $stmt_crearAnimal->bindValue(11, $animal->extension_imagen);
+       try{
         $stmt_crearAnimal->execute();
         }catch(Exception $e){
             return false;
