@@ -35,9 +35,7 @@ $animal->tamano = $_POST['tamano'];
 $animal->peso = $_POST['peso'];
 $animal->descripcion = $_POST['descripcion'];
 
-//POR HACER--Subo la imagen a la carpeta del servidor
-$ruta="../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'].".jpeg";
-        $resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
+
 
 //Inserto los datos en la base de datos
 $insert=insertanimal($animal);
@@ -45,6 +43,9 @@ $insert=insertanimal($animal);
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($insert) {
   $_SESSION["mensaje_subida"]="Animal registrado correctamente de nuestra Base de Datos";
+  //POR HACER--Subo la imagen a la carpeta del servidor
+$ruta="../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'].".jpeg";
+$resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
   //header("Location: ../content/desplegable_usuario/registro_animales.php");
   echo $ruta;
   phpinfo();

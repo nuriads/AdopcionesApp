@@ -48,7 +48,13 @@ include '../../index.php';
             </div>
             <div class="form-group">
               <label for="">Especie</label>
-              <input type="text" name="especie" class="form-control" id="especie" aria-describedby="especieHelp" placeholder="Especie">
+              <select onclick="ver()" class="btn btn-secondary dropdown-toggle" name="especie" id="sexo">
+                <option class="dropdown-item" name="especie" value="perro">Perro</option>
+                <option class="dropdown-item" name="especie" value="gato">Gato</option>
+                <option class="dropdown-item" name="especie" value="conejo">Conejo</option>
+                <option class="dropdown-item" name="especie" value="hurón">Hurón</option>
+                <option class="dropdown-item" name="especie" value="otro">Otro</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="raza">raza</label>
