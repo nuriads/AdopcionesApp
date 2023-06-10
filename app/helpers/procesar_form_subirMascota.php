@@ -54,12 +54,8 @@ if ($insert) {
  //Subo la imagen a la carpeta del servidor
 $ruta="../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'].".".$ext_img;
 $resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-echo  $ext_img;
-echo "<br>";
-echo $_FILES["imagen"]["type"];
-echo "<br>";
-echo   $animal->$extension_imagen;
-//header("Location: ../content/desplegable_usuario/registro_animales.php");
+
+header("Location: ../content/desplegable_usuario/registro_animales.php");
 } else {
   
   $_SESSION["mensaje_error_subida"]="Error al insertar los datos en la base de datos, el microchip del animal ya está en nuestra Base de Datos";
