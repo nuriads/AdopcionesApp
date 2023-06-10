@@ -11,6 +11,7 @@ class Animal {
     private $tamano;
     private $peso;
     private $descripcion;
+    private $extension_imagen;
     
 
     

@@ -33,7 +33,7 @@ $fechaActual = getdate();
                             $dia = substr($animal->fecha_nac, 8, 2); ?>
                             <div style="height: 250px; margin-bottom:25px" class="col-md-2 gatocard">
                                 <div style="height: 100%" class="card">
-                                    <img style="height: 50%;" src="<?php echo "../../../assets/images/mascotas/" . $animal->especie . "/" . $animal->microchip . ".avif" ?>" class="card-img-top" alt=<?= $animal->nombre ?>>
+                                    <img style="height: 50%;" src="<?php echo "../../../assets/images/mascotas/" . $animal->especie . "/" . $animal->microchip . ".".$animal->extension_imagen ?>" class="card-img-top" alt=<?= $animal->nombre ?>>
                                     <div style="height: 100px;" class="card-body">
                                         <h5 class="card-title"><?= $animal->nombre ?></h5>
                                         <p class="card-text">Edad: <?= $fechaActual["year"] - $ano ?> años</p>

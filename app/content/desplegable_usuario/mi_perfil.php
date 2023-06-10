@@ -170,7 +170,7 @@ if (isset($_SESSION["mensaje_error"])) {
                   $dia = substr($animal->fecha_nac, 8, 2); ?>
                   <div style="height: 150px; margin-bottom:25px" class="col-md-2 gatocard">
                     <div style="height: 100%" class="card">
-                      <img style="height: 100px;" src="<?php echo "../../../assets/images/mascotas/" . $animal->especie . "/" . $animal->microchip . ".avif" ?>" class="card-img-top" alt=<?= $animal->nombre ?>>
+                      <img style="height: 100px;" src="<?php echo "../../../assets/images/mascotas/" . $animal->especie . "/" . $animal->microchip . ".".$animal->extension_imagen?>" class="card-img-top" alt=<?= $animal->nombre ?>>
                       <div class="card-body">
                         <h5 style="font-size:1rem" class="card-title"><?= $animal->nombre ?></h5>
                       </div>

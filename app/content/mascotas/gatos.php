@@ -20,7 +20,7 @@ $fechaActual=getdate();
 					$dia= substr($gato->fecha_nac,8,2);?>
 			<div class="col-md-4 mb-4 gatocard">
 				<div class="card">
-					<img src="<?php echo "../../../assets/images/mascotas/".$gato->especie."/".$gato->microchip.".avif"?>" class="card-img-top" alt=<?=$gato->nombre?>>
+					<img src="<?php echo "../../../assets/images/mascotas/".$gato->especie."/".$gato->microchip.".".$gato->extension_imagen?>" class="card-img-top" alt=<?=$gato->nombre?>>
 					<div class="card-body">
 						<h5 class="card-title"><?= $gato->nombre?></h5>
 						<p class="card-text">Edad: <?=$fechaActual["year"]-$ano?> años</p>

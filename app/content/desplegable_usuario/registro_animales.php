@@ -53,6 +53,7 @@ include '../../index.php';
                 <option class="dropdown-item" name="especie" value="gato">Gato</option>
                 <option class="dropdown-item" name="especie" value="conejo">Conejo</option>
                 <option class="dropdown-item" name="especie" value="hurón">Hurón</option>
+                <option class="dropdown-item" name="especie" value="ave">Ave</option>
                 <option class="dropdown-item" name="especie" value="otro">Otro</option>
               </select>
             </div>
