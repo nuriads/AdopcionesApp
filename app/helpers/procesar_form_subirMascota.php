@@ -36,7 +36,7 @@ $animal->peso = $_POST['peso'];
 $animal->descripcion = $_POST['descripcion'];
 
 //POR HACER--Subo la imagen a la carpeta del servidor
-$ruta="../../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'];
+$ruta="../../assets/images/mascotas/".$_POST['especie']."/". $_POST['microchip'].".jpeg";
         $resu=@move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
 
 //Inserto los datos en la base de datos
@@ -45,8 +45,9 @@ $insert=insertanimal($animal);
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($insert) {
   $_SESSION["mensaje_subida"]="Animal registrado correctamente de nuestra Base de Datos";
-  header("Location: ../content/desplegable_usuario/registro_animales.php");
-  
+  //header("Location: ../content/desplegable_usuario/registro_animales.php");
+  echo $ruta;
+  phpinfo();
 } else {
   
   $_SESSION["mensaje_error_subida"]="Error al insertar los datos en la base de datos, el microchip del animal ya está en nuestra Base de Datos";

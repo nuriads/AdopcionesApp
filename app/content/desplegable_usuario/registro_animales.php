@@ -34,7 +34,7 @@ include '../../index.php';
 
           <?php endif; ?>
           <!-- Formulario para animales -->
-          <form id="refugioForm" action="../../helpers/procesar_form_subirMascota.php" method="POST">
+          <form id="refugioForm" action="../../helpers/procesar_form_subirMascota.php" method="POST" enctype="multipart/form-data">
             <!-- elementos del formulario para animales -->
             <h4 style="margin-top:15px">Registro de Animales</h4>
 
