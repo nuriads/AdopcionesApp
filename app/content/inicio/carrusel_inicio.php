@@ -3,22 +3,22 @@ if (
   strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_usuario') !== false ||
   strpos($_SERVER['REQUEST_URI'], '/AdopcionesApp_3.0/app/helpers/procesar_form_refugios') !== false
 ) {
-      require_once '../index.php';
-      require_once '../models/AccesoDatos.php';
-      require_once '../models/Animal.php';
-      require_once '../models/crud/funcionesCrud.php';
+  require_once '../index.php';
+  require_once '../models/AccesoDatos.php';
+  require_once '../models/Animal.php';
+  require_once '../models/crud/funcionesCrud.php';
 } elseif ($_SERVER['REQUEST_URI'] == '/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php') {
-      require_once '../../index.php';
-      require_once '../../models/AccesoDatos.php';
-      require_once '../../models/Animal.php';
-      require_once '../../models/crud/funcionesCrud.php';
+  require_once '../../index.php';
+  require_once '../../models/AccesoDatos.php';
+  require_once '../../models/Animal.php';
+  require_once '../../models/crud/funcionesCrud.php';
 }
 
 
 $array_carrusel = randomAnimals();
 $num = 0;
 $estado_itemcarrusel = "active";
-
+$fechaActual = getdate();
 ?>
 
 
@@ -34,17 +34,17 @@ $estado_itemcarrusel = "active";
     </div>
 
     <?php
-    
-    if(isset($msj)){
+
+    if (isset($msj)) {
       echo "<h2>$msj</h2>";
     }
     ?>
-    
+
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
-        <ul class="carousel-indicators" style="font-size:large;list-style:disc; color:blueviolet">
+      <!-- Indicators/dots -->
+      <ul class="carousel-indicators" style="font-size:large;list-style:disc; color:blueviolet">
         <li data-bs-target="#demo" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#demo" data-bs-slide-to="1"></li>
         <li data-bs-target="#demo" data-bs-slide-to="2"></li>
@@ -61,39 +61,51 @@ $estado_itemcarrusel = "active";
           ?>
           <?php //echo $estado_itemcarrusel 
           ?>
+          <!-- Obtengo los datos de la fecha por separado para calcular la edad -->
+          <?php $ano = substr($array_carrusel[$num]->fecha_nac, 0, 4);
+          $mes = substr($array_carrusel[$num]->fecha_nac, 5, 2);
+          $dia = substr($array_carrusel[$num]->fecha_nac, 8, 2); ?>
           <div class="carousel-item <?php echo $estado_itemcarrusel ?> ">
 
             <div class="row">
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . "." . $array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
-                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="card-text">Edad: <?= $fechaActual["year"] - $ano ?> años</p>
                     <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
                     <a href="#" class="boton-animales">Adóptame!</a>
                   </div>
                 </div>
               </div>
               <?php $num = $num + 1 ?>
+              <!-- Obtengo los datos de la fecha por separado para calcular la edad -->
+              <?php $ano = substr($array_carrusel[$num]->fecha_nac, 0, 4);
+              $mes = substr($array_carrusel[$num]->fecha_nac, 5, 2);
+              $dia = substr($array_carrusel[$num]->fecha_nac, 8, 2); ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . "." . $array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
-                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="card-text">Edad: <?= $fechaActual["year"] - $ano ?> años</p>
                     <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
                     <a href="#" class="boton-animales">Adóptame!</a>
                   </div>
                 </div>
               </div>
               <?php $num = $num + 1 ?>
+              <!-- Obtengo los datos de la fecha por separado para calcular la edad -->
+              <?php $ano = substr($array_carrusel[$num]->fecha_nac, 0, 4);
+              $mes = substr($array_carrusel[$num]->fecha_nac, 5, 2);
+              $dia = substr($array_carrusel[$num]->fecha_nac, 8, 2); ?>
               <div class="col">
                 <div class="card">
-                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . ".".$array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
+                  <img src="<?php echo "../../../assets/images/mascotas/" . $array_carrusel[$num]->especie . "/" . $array_carrusel[$num]->microchip . "." . $array_carrusel[$num]->extension_imagen ?>" class="card-img-top" alt="<?= $array_carrusel[$num]->nombre ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $array_carrusel[$num]->nombre ?></h5>
-                    <p class="card-text">Edad: <?= $array_carrusel[$num]->fecha_nac ?></p>
+                    <p class="card-text">Edad: <?= $fechaActual["year"] - $ano ?> años</p>
                     <p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
                     <a href="#" class="boton-animales">Adóptame!</a>
                   </div>
@@ -162,42 +174,40 @@ $estado_itemcarrusel = "active";
 <script src="../../js/registro.js"></script>
 <!--Verificar si existe la variable de sesión 'mensaje_error'-->
 <?php if (isset($_SESSION['mensaje_error'])) : ?>
-<script>
-
+  <script>
     // Abrir el modal
- 
+
     $(document).ready(function() {
-  $('#formularioModal').modal('show');
-  //Obtengo el elemento de cierre del modal
-  var closeBtn = document.getElementsByClassName("btn-close")[0];
+      $('#formularioModal').modal('show');
+      //Obtengo el elemento de cierre del modal
+      var closeBtn = document.getElementsByClassName("btn-close")[0];
 
-  // Agrego un evento de click al botón de cierre del modal
-closeBtn.addEventListener("click", function() {
-  // Envía una solicitud AJAX para eliminar la variable de sesión
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "../../helpers/eliminar_variable_sesion.php", true);
-  // Compruebo que la eliminación de la variable de sesión se haya realizado correctamente y si es así, refresco la página.
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        // La variable de sesión se ha eliminado correctamente
-        location.reload(); // Refresca la página
-      } else {
-        // Ocurrió un error al eliminar la variable de sesión
-        console.error("Error al eliminar la variable de sesión.");
-      }
-    }
-  };
+      // Agrego un evento de click al botón de cierre del modal
+      closeBtn.addEventListener("click", function() {
+        // Envía una solicitud AJAX para eliminar la variable de sesión
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "../../helpers/eliminar_variable_sesion.php", true);
+        // Compruebo que la eliminación de la variable de sesión se haya realizado correctamente y si es así, refresco la página.
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              // La variable de sesión se ha eliminado correctamente
+              location.reload(); // Refresca la página
+            } else {
+              // Ocurrió un error al eliminar la variable de sesión
+              console.error("Error al eliminar la variable de sesión.");
+            }
+          }
+        };
 
-  
-  xhr.send();
-});
 
-  
-});
+        xhr.send();
+      });
 
-</script>
-<?php endif; 
+
+    });
+  </script>
+<?php endif;
 
 
 ?>
@@ -207,14 +217,12 @@ closeBtn.addEventListener("click", function() {
 
 
 <div class="container-fluid ">
-<?php 
+  <?php
 
-include_once '../inicio/footer.php';
+  include_once '../inicio/footer.php';
 
-?>
+  ?>
 </div>
 </body>
 
 </html>
-
-

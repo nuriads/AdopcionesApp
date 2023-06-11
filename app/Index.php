@@ -230,6 +230,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/gatos.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/hurones.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/otros-animales.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/mascotas.php':
+case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/ficha_mascota.php':
  urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
  urllogo = '../../../assets/images/logos/logo4.PNG';
