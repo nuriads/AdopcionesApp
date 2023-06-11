@@ -396,7 +396,34 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  break;
   
 }
+var rutaActual = window.location.href;
+var expresionRegular = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/colabora\/adopta\.php\?peticion=adoptar&mascota=.*/;
 
+if (expresionRegular.test(rutaActual)) {
+  console.log("La ruta actual coincide con la expresión regular.");
+  urlestilos='../../../assets/style.css'; 
+ urluser = '../../../assets/images/users/avatardefault.png';
+ urllogo = '../../../assets/images/logos/logo4.PNG';
+ urlindex='../inicio/carrusel_inicio.php';
+ urlgatos='../mascotas/gatos.php';
+ urlperros='../mascotas/perros.php';
+ urlhurones='../mascotas/hurones.php';
+ urlotros='../mascotas/otros-animales.php';
+ urladopta='./adopta.php';
+ urlabuelitos='./abuelitos.php';
+ urlvoluntariado='./voluntariado.php';
+ urlrefugios='./refugiosView.php';
+ urliconoUser='../desplegable_usuario/mi_perfil.php';
+ urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
+ urldonativos='../colabora/donativos.php';
+ urlconfusu='../desplegable_usuario/conf_usuario.php';
+ urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
+ urlmiperfil='../desplegable_usuario/mi_perfil.php';
+ urlregistroanimal='../desplegable_usuario/registro_animales.php';
+ urlblog='../blog/blog.php';
+} else {
+  console.log("La ruta actual no coincide con la expresión regular.");
+}
 // Pongo los valores de cada variable en el href o src del elemento html correspondiente
 //Style
 var linkestilos = document.getElementById("estilos");

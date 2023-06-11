@@ -1,17 +1,21 @@
 <?php
  include '../../index.php';
-
-echo '<div style="text-align: center; margin-top: 50px; color: #00afa1">';
-echo '<h4 > Si estás interesado en ponerte en contacto con algún refugio como adoptante, rellena el siguiente formulario y nosotros haremos todo el trabajo!</h4>';
-echo '</div>';
 ?>
+<!--Script para recuperar la información del animal-->
 
-<div class="container-fluid ">
+<div class="container">
+<div style="text-align: center; margin-top: 50px; color: #00afa1">
+<h4 > Si estás interesado en ponerte en contacto con algún refugio como adoptante, rellena el siguiente formulario y nosotros haremos todo el trabajo!</h4>
+</div>
+<br>
   <div class='menus-contacto'>
+  <h3 id="miParrafo">Formulario de adopción  &#x1f415;&#128008;</h3>
+  <p>Cuéntanos por qué estás interesado en adoptar a uno de nuestros adorables animales. Queremos conocer más sobre ti y asegurarnos de encontrar el hogar perfecto para nuestros peludos amigos. <br>Por favor, comparte detalles como tu experiencia con mascotas, el tipo de hogar en el que viviría el animal adoptado y cualquier otra información que consideres relevante. Estamos emocionados de saber más sobre ti y cómo podrías brindarle un amoroso hogar a uno de nuestros animales. ¡Gracias por considerar la adopción!</p>
 <form action="procesar_form_adopta.php" id="formulario-adopta" method="POST" >
+<input type="hidden" name="microchip_adopcion" value="">
 
   <div class="form-group">
-    <label for="email"></label>
+    <label for="email"> </label>
     <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Escribe tu email">
     <small id="emailHelp" class="form-text text-muted">No te preocupes, no compartiremos tu e-mail con terceros.</small>
   </div>
@@ -20,8 +24,12 @@ echo '</div>';
     <input type="telefono" class="form-control" name="telefono" id="telefono" placeholder="Teléfono">
   </div>
   <div class="form-group">
+    <label for="telefono"></label>
+    <input type="telefono" class="form-control" name="telefono" id="adoptar" placeholder="¿A quién estás interesado en adoptar?">
+  </div>
+  <div class="form-group">
     <label for="mensaje"></label>
-    <textarea class="form-control" id="mensaje" rows="3" name="mensaje">Déjanos un mensaje, y nos pondremos en contacto contigo lo antes posible</textarea>
+    <textarea class="form-control" id="mensaje" rows="3" name="mensaje"  placeholder="Déjanos un mensaje, y nos pondremos en contacto contigo lo antes posible"></textarea>
   </div>
   <div>
   &nbsp
@@ -31,6 +39,21 @@ echo '</div>';
 
 </form>
 
+<script>
+  // Obtenego el valor del parámetro de URL
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+var objetoRecuperado = null;
+
+// Verifico el identificador
+if (urlParams.get("peticion") === "adoptar") {
+  var animal=document.getElementById('adoptar');
+animal.value=urlParams.get("mascota");
+
+var parrafo = document.getElementById("miParrafo");
+parrafo.innerHTML = "Formulario de adopción para <br>" +urlParams.get("mascota") +" &#x1f415;&#128008;";
+}
+</script>
 
 <!--Mostrar mensaje de exito cuando ha sido enviado correctamente-->
 <div id="mensaje_exito" style="display:none">

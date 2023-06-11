@@ -64,7 +64,7 @@ $dia = substr($mascota->fecha_nac, 8, 2);
                         <label class="fw-bold">Descripción:</label>
                         <p><?= $mascota->descripcion ?></p>
                     </div>
-                    <a style="font-size:19px;" class="boton-animales" href="../colabora/adopta.php">¡Adóptame!</a>
+                    <a style="font-size:19px;" class="boton-animales" href="../colabora/adopta.php?peticion=adoptar&mascota=<?= $mascota->nombre ?>">¡Adóptame!</a>
                          
 						</form> 
                 </div>
