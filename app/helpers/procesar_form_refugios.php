@@ -32,6 +32,7 @@ $insert=insertRefugio($refugio);
 
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($insert) {
+  $_SESSION['email']=$_POST['email'];
   $_SESSION["mensaje"]="Registro Completado";
   $_SESSION["rol"]="refugio";
   header("Location: ../content/desplegable_usuario/mi_perfil.php");
