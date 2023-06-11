@@ -201,7 +201,7 @@ class AccesoDatos {
         return $resu;
     }
     // SELECT ANIMAL Devuelvo un animal o false
-    public function getAnimal (string $microchip):Animal {
+    public function getAnimal (string $microchip) {
         $animal = false;
         $stmt_animal   = $this->dbh->prepare("select * from animal where microchip=:microchip");
         $stmt_animal->setFetchMode(PDO::FETCH_CLASS, 'animal');

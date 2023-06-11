@@ -165,9 +165,21 @@ button.btn-primary {
     background-color: #fb9ee7;
     border-color: #fb9ee7;
     box-shadow: 2px 2px 5px #fb9ee7;
+    
 }
 
+button.boton-animales{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
+button.boton-animales:hover{
+    background-color: #fb9ee7;
+    color: #fff;
+}
 /*Tarjetas animales*/
 
 .card {
@@ -406,4 +418,18 @@ height: 60px;
   .accordion-button:not(.collapsed) {
     background-color: #fb9ee7; /* Cambia el color a tu elección */
     border-color: #FFC720;
+}
+
+.diviconorrss{
+    float: right;
+ 
+    margin-top:5px;
+    margin-right:5px;
+}
+
+.iconorrss{
+    
+    width: 25px;
+    height: 25px;
+    
 }

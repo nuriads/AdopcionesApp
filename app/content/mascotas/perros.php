@@ -22,9 +22,14 @@ $fechaActual=getdate();
 					<img src="<?php echo "../../../assets/images/mascotas/".$perro->especie."/".$perro->microchip.".".$perro->extension_imagen?>" class="card-img-top" alt="<?= $perro->nombre?>">
 					<div class="card-body">
 						<h5 class="card-title"><?= $perro->nombre?></h5>
-						<p class="card-text">Edad: <?=$fechaActual["year"]-$ano?> años</p>
-						<p class="desc-animal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, quas.</p>
-						<a href="#" class="boton-animales">Adóptame!</a>
+						<p class="card-text">Edad: <?=$fechaActual["year"]-$ano?> años <br>
+						Género: <?=$perro->sexo?>  <br>
+						Raza: <?=$perro->raza?>  
+						 </p>
+						<form action="./ficha_mascota.php" method="POST">
+							<input type="hidden" name="microchip" value="<?=$perro->microchip?>">
+							<button class="btn boton-animales" type="submit">Adóptame!</button>
+						</form> 
 					</div>
 				</div>
 			</div>

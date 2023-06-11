@@ -21,7 +21,7 @@ include '../../../index.php';
     <div class="row mt-5">
       <div class="col-lg-6">
         <h4>Un Nuevo Comienzo</h4>
-        <p>Hace algunos meses, este valiente perro fue rescatado de un refugio de animales, donde esperaba ansiosamente a ser adoptado. Con una mirada tierna y ojos llenos de esperanza, conquistó el corazón de una familia que decidió darle una oportunidad y brindarle un hogar lleno de amor. Desde ese momento, la vida del perro adoptado cambió para siempre.</p>
+        <p>Hace algunos meses, Kala fue rescatada de un refugio de animales, donde esperaba ansiosamente a ser adoptado. Con una mirada tierna y ojos llenos de esperanza, conquistó el corazón de una familia que decidió darle una oportunidad y brindarle un hogar lleno de amor. Desde ese momento, la vida del perro adoptado cambió para siempre.</p>
         <h4>El Vínculo Especial</h4>
         <p>Desde el primer día, el perro adoptado demostró su gratitud y cariño hacia su nueva familia. Con cada cola moviéndose de un lado a otro y lamidas llenas de amor, se ganó rápidamente el afecto de todos en el hogar. Su naturaleza juguetona y energía contagiosa llenaron de alegría los días de su familia adoptiva, creando un vínculo especial que solo se fortalece con el tiempo.</p>
     </div>
