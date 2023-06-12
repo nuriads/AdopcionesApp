@@ -7,9 +7,7 @@ include '../../models/Usuario.php';
 include '../../models/crud/funcionesCrud.php';
 
 $email=$_SESSION['email'];
-$refugio=getRefugio($email);
 $user=getUser($email);
-$array_animales = getAnimalesRefugio($refugio->nif);
 $fechaActual = getdate();
 
 //Borro el mensaje de error si anteriormente existia
@@ -117,6 +115,10 @@ if (isset($_SESSION["mensaje_error"])) {
 <?php endif; ?>
 
 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'refugio') : ?>
+<?php 
+  $refugio=getRefugio($email);
+  $array_animales = getAnimalesRefugio($refugio->nif);
+?>
 
   <div class="container">
     <h2>Mi cuenta</h2>

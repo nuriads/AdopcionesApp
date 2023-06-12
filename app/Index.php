@@ -396,6 +396,8 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  break;
   
 }
+
+//Para que cuandola url tenga petición get sigan funcionando las urls
 var rutaActual = window.location.href;
 var expresionRegular = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/colabora\/adopta\.php\?peticion=adoptar&mascota=.*/;
 
