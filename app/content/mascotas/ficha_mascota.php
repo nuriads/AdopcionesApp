@@ -41,8 +41,17 @@ $dia = substr($mascota->fecha_nac, 8, 2);
                 <div class="card-header">
                     <h2 style="float:left"><?= $mascota->nombre ?></h2>
                     <div class="diviconorrss">
-                        Comparte:&nbsp;&nbsp;<img class="iconorrss" src="../../../assets/images/logos/rrss/twitter.png" alt="">
-                        <img class="iconorrss" src="../../../assets/images/logos/rrss/facebook.png" alt="">
+                        Comparte:&nbsp;&nbsp;
+                        <a style="text-decoration:none" href="https://twitter.com/intent/tweet?text=¡Ayuda a cambiar la vida de un animal necesitado! <?=$mascota->nombre?> está en busca de un hogar, visita nuestra página y conócela&url=http%3A%2F%2Flocalhost%2FAdopcionesApp_3.0%2Fapp%2Fcontent%2Fmascotas%2Fficha_mascota.php&via=adopcionesApp&hashtags=Adopción,Mascotas" target="_blank">
+                            <img class="iconorrss" src="../../../assets/images/logos/rrss/twitter.png" alt="">
+                            <a style="text-decoration:none" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2FAdopcionesApp_3.0%2Fapp%2Fcontent%2Fmascotas%2Fficha_mascota.php&display=popup" target="_blank">
+  <img class="iconorrss" src="../../../assets/images/logos/rrss/facebook.png" alt="">
+</a>
+<a href="whatsapp://send?text=¡Ayuda a cambiar la vida de un animal necesitado! <?=$mascota->nombre?> está en busca de un hogar, visita nuestra página y conócela%0A%0Ahttp%3A%2F%2Flocalhost%2FAdopcionesApp_3.0%2Fapp%2Fcontent%2Fmascotas%2Fficha_mascota.php" target="_blank">
+
+<img style="text-decoration:none;  width: 27px; height: 27px;" class="iconorrss" src="../../../assets/images/logos/rrss/whatsapp.png" alt="">
+</a>
+
                     </div>
                 </div>
                 <div class="card-body">
@@ -65,8 +74,8 @@ $dia = substr($mascota->fecha_nac, 8, 2);
                         <p><?= $mascota->descripcion ?></p>
                     </div>
                     <a style="font-size:19px;" class="boton-animales" href="../colabora/adopta.php?peticion=adoptar&mascota=<?= $mascota->nombre ?>">¡Adóptame!</a>
-                         
-						</form> 
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -76,5 +85,6 @@ $dia = substr($mascota->fecha_nac, 8, 2);
     <!-- Enlace al archivo de JavaScript de Bootstrap (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<?php include_once '../inicio/footer.php'?>
+<?php include_once '../inicio/footer.php' ?>
+
 </html>
