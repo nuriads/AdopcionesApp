@@ -11,7 +11,7 @@
   <div class='menus-contacto'>
   <h3 id="miParrafo">Formulario de adopción  &#x1f415;&#128008;</h3>
   <p>Cuéntanos por qué estás interesado en adoptar a uno de nuestros adorables animales. Queremos conocer más sobre ti y asegurarnos de encontrar el hogar perfecto para nuestros peludos amigos. <br>Por favor, comparte detalles como tu experiencia con mascotas, el tipo de hogar en el que viviría el animal adoptado y cualquier otra información que consideres relevante. Estamos emocionados de saber más sobre ti y cómo podrías brindarle un amoroso hogar a uno de nuestros animales. ¡Gracias por considerar la adopción!</p>
-<form action="procesar_form_adopta.php" id="formulario-adopta" method="POST" >
+<form action="../../helpers/procesar_form_adopta.php" id="formulario-adopta" method="POST" >
 <input type="hidden" name="microchip_adopcion" value="">
 
   <div class="form-group">
@@ -25,7 +25,7 @@
   </div>
   <div class="form-group">
     <label for="telefono"></label>
-    <input type="telefono" class="form-control" name="telefono" id="adoptar" placeholder="¿A quién estás interesado en adoptar?">
+    <input type="telefono" class="form-control" name="adoptar" id="adoptar" placeholder="¿A quién estás interesado en adoptar?">
   </div>
   <div class="form-group">
     <label for="mensaje"></label>
@@ -57,13 +57,13 @@ parrafo.innerHTML = "Formulario de adopción para <br>" +urlParams.get("mascota"
 
 <!--Mostrar mensaje de exito cuando ha sido enviado correctamente-->
 <div id="mensaje_exito" style="display:none">
-      <p>Mensaje recibido. Muy pronto nos pondremos en contacto contigo!</p>
+      <p style="color:#00afa1">Mensaje recibido. Muy pronto nos pondremos en contacto contigo!</p>
 </div>
 </div>
 
 <!--Mensaje de error-->
 <div id="mensaje_error" style="display:none">
-      <p>Ha habido un error al enviar el mensaje. Inténtalo de nuevo.</p>
+      <p style="color:red">Ha habido un error al enviar el mensaje. Inténtalo de nuevo.</p>
 </div>
 </div>
 
