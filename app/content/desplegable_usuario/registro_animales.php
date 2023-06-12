@@ -9,11 +9,6 @@ include '../../index.php';
   <h1>Zona exclusiva de refugios</h1>
 <?php endif; ?>
 
-<!--Si no está iniciada sesión se muestra el formulario de registro para refugios o asociaciones.-->
-<?php if (!isset($_SESSION['rol'])) : ?>
-
-
-<?php endif; ?>
 <!--Si está iniciada sesión se muestra el formulario para que puedan subir las mascotas a la base de datos.-->
 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'refugio') : ?>
 
@@ -120,17 +115,25 @@ include '../../index.php';
           </form>
         </div>
       <?php endif; ?>
+      
       </div>
 
-      <div class="container-fluid ">
-        <?php
-
-        include_once '../inicio/footer.php';
-
-        ?>
+      <div class="card-footer">
+      <a href="./gestion_animales.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+</svg>&nbsp;Atrás</a></div>
+   
       </div>
+ 
     </div>
+
   </div>
+    <div class="container-fluid ">
+  <?php
+
+include_once '../inicio/footer.php';
+
+?>
   </div>
 
   </body>
