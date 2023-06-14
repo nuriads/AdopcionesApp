@@ -108,15 +108,6 @@ session_start();
         <div class="user-dropdown" id="user-menu">
           <ul>
             <li><a id="mi_perfil" href="">Mi perfil</a></li>
-            <li><a id="conf_usu" href="">Configuración</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle">Más opciones</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Opción 1</a></li>
-                <li><a href="#">Opción 2</a></li>
-                <li><a href="#">Opción 3</a></li>
-              </ul>
-            </li>
             <li><a id="cerrar_sesion" href="">Cerrar sesión</a></li>
           </ul>
         </div>
@@ -170,7 +161,6 @@ var urlvoluntariado;
 var urliconoUser;
 var urlsoyasociacion;
 var urlmiperfil;
-var urlconfusu;
 var urlcerrarsesion;
 var urlblog;
 var urldonativos;
@@ -196,7 +186,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/':
  urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos;
  urlmiperfil='';
- urlconfusu='';
  urlcerrarsesion='';
  urlblog='';
  urlrefugios='';
@@ -218,7 +207,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php'
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -246,7 +234,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/ficha_mascota.php'
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -273,7 +260,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -295,7 +281,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
@@ -317,7 +302,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -341,7 +325,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../content/registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../content/desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -363,7 +346,6 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urliconoUser='../../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../../colabora/donativos.php';
- urlconfusu='../../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../../desplegable_usuario/registro_animales.php';
@@ -387,8 +369,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
- urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
+urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
@@ -418,8 +399,7 @@ if (expresionRegular.test(rutaActual)) {
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
  urldonativos='../colabora/donativos.php';
- urlconfusu='../desplegable_usuario/conf_usuario.php';
- urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
+urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
  urlblog='../blog/blog.php';
@@ -479,8 +459,6 @@ linkdonativos.href = urldonativos;
 var linkrefugios = document.getElementById("refugiosView");
 linkrefugios.href = urlrefugios;
 //Desplagable Usuario
-var linkconfusu = document.getElementById("conf_usu");
-linkconfusu.href = urlconfusu;
 var linkcerrarsesion = document.getElementById("cerrar_sesion");
 linkcerrarsesion.href = urlcerrarsesion;
 var linkmiperfil = document.getElementById("mi_perfil");
