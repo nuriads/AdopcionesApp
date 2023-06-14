@@ -427,6 +427,13 @@ if (expresionRegular.test(rutaActual)) {
   console.log("La ruta actual no coincide con la expresión regular.");
 }
 // Pongo los valores de cada variable en el href o src del elemento html correspondiente
+//Blog
+
+var linkblog = document.getElementById("blog");
+linkblog.href = urlblog;
+console.log(typeof(linkblog));
+console.log(linkblog.href);
+
 //Style
 var linkestilos = document.getElementById("estilos");
 linkestilos.href = urlestilos;
@@ -479,12 +486,7 @@ linkcerrarsesion.href = urlcerrarsesion;
 var linkmiperfil = document.getElementById("mi_perfil");
 linkmiperfil.href = urlmiperfil;
 
-//Blog
 
-var linkblog = document.getElementById("blog");
-linkblog.href = urlblog;
-console.log(typeof(linkblog));
-console.log(linkblog.href);
 
 </script>
 
