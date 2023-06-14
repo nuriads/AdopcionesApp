@@ -64,7 +64,7 @@ session_start();
               <li><a id="adopta" class="dropdown-item text-dark" href="">Estoy interesado/a en adoptar</a></li>
               <li><a id="abuelitos" class="dropdown-item text-dark" href="">Adopta un abuelito</a></li>
               <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
-              <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li>
+              <!-- <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li> -->
               <li><a id="refugiosView" class="dropdown-item text-dark" href="">Listado de refugios</a></li>
               <li><a id="donativos" class="dropdown-item text-dark" href="">Donativos</a></li>
             </ul>
