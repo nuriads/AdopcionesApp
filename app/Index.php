@@ -78,15 +78,7 @@ session_start();
           </div>
         </div>
       </div>
-      <!--Barra de búsqueda-->
-      <div class="row ms-auto me-2">
-        <form class="form-inline" action='./helpers/busqueda.php' method='GET'>
-          <input class='search' class="form-control mr-sm-2" type="search" placeholder="Search" name='query' aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" id="boton-busqueda" value="Buscar" type="submit">Buscar</button>
-
-        </form>
-      </div>
-
+     
 
 
 
