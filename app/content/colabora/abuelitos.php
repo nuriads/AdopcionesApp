@@ -85,9 +85,9 @@
 
 
 <div class="container-fluid ">
-<?php 
+	<?php 
 
-include_once '../inicio/footer.php';
+	include_once '../inicio/footer.php';
 
-?>
+	?>
 	</div>

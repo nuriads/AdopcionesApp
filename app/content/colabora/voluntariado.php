@@ -2,7 +2,7 @@
 <?php
 include '../../index.php';
  ?>
- <div id="container">
+ <div id="contenido">
  <div class="voluntariado">
 <div class="row">
   <div class="col-md-6">
