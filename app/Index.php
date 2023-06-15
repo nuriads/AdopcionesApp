@@ -66,7 +66,7 @@ session_start();
               <li><a id="voluntariado" class="dropdown-item text-dark" href="">Voluntariado</a></li>
               <!-- <li><a id="registroRef" class="dropdown-item text-dark" href="">Soy un refugio o asociación</a></li> -->
               <li><a id="refugiosView" class="dropdown-item text-dark" href="">Listado de refugios</a></li>
-              <li><a id="donativos" class="dropdown-item text-dark" href="">Donativos</a></li>
+              <!-- <li><a id="donativos" class="dropdown-item text-dark" href="">Donativos</a></li> -->
             </ul>
           </li>
           <li class="nav-item">
@@ -80,18 +80,13 @@ session_start();
         </div>
       </div>
       <!--Barra de búsqueda-->
-      <div class="row ms-auto me-2">
+      <!-- <div class="row ms-auto me-2">
         <form class="form-inline" action='./helpers/busqueda.php' method='GET'>
           <input class='search' class="form-control mr-sm-2" type="search" placeholder="Search" name='query' aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" id="boton-busqueda" value="Buscar" type="submit">Buscar</button>
 
-        </form>
+        </form> -->
       </div>
-
-
-
-
-
 
       <!--Menú del usuario-->
       <div class="user-container" id="user-menu">
@@ -173,7 +168,7 @@ var urlmiperfil;
 var urlconfusu;
 var urlcerrarsesion;
 var urlblog;
-var urldonativos;
+/* var urldonativos; */
 var urlrefugios;
 var urlmiperfil;
 var urlregistroanimal;
@@ -194,7 +189,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/':
  urlvoluntariado='';
  urliconoUser='./content/registro/registro.php';
  urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos;
+ /* urldonativos; */
  urlmiperfil='';
  urlconfusu='';
  urlcerrarsesion='';
@@ -217,7 +212,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/inicio/carrusel_inicio.php'
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -245,7 +240,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/ficha_mascota.php'
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -256,7 +251,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/mascotas/ficha_mascota.php'
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/adopta.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/abuelitos.php':
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/voluntariado.php':
-case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php':
+/* case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/donativos.php': */
 case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
@@ -272,7 +267,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urlrefugios='./refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -294,7 +289,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/colabora/refugiosView.php':
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
  urlregistroanimal='../desplegable_usuario/registro_animales.php';
@@ -316,7 +311,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -340,7 +335,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../content/registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+/*  urldonativos='../colabora/donativos.php'; */
  urlconfusu='../content/desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../content/desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -362,7 +357,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlrefugios='../../colabora/refugiosView.php';
  urliconoUser='../../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../../registro/registro.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../../colabora/donativos.php';
+ /* urldonativos='../../colabora/donativos.php'; */
  urlconfusu='../../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../../desplegable_usuario/mi_perfil.php';
@@ -386,7 +381,7 @@ case 'http://localhost/AdopcionesApp_3.0/app/content/registro/registro_animales.
  urlrefugios='../colabora/refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+ /* urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -417,7 +412,7 @@ if (expresionRegular.test(rutaActual)) {
  urlrefugios='./refugiosView.php';
  urliconoUser='../desplegable_usuario/mi_perfil.php';
  urlsoyasociacion='../registro/registro_animales.php';//Cambiar cuando haya pagina sólo de registro de refugios
- urldonativos='../colabora/donativos.php';
+/*  urldonativos='../colabora/donativos.php'; */
  urlconfusu='../desplegable_usuario/conf_usuario.php';
  urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
  urlmiperfil='../desplegable_usuario/mi_perfil.php';
@@ -472,10 +467,10 @@ var linkabuelitos = document.getElementById("abuelitos");
 linkabuelitos.href = urlabuelitos;
 var linkvoluntariado = document.getElementById("voluntariado");
 linkvoluntariado.href = urlvoluntariado;
-var linksoyasociacion = document.getElementById("registroRef");
-linksoyasociacion.href = urlsoyasociacion;
-var linkdonativos = document.getElementById("donativos");
-linkdonativos.href = urldonativos;
+/* var linksoyasociacion = document.getElementById("registroRef");
+linksoyasociacion.href = urlsoyasociacion; */
+/* var linkdonativos = document.getElementById("donativos");
+linkdonativos.href = urldonativos; */
 var linkrefugios = document.getElementById("refugiosView");
 linkrefugios.href = urlrefugios;
 //Desplagable Usuario
