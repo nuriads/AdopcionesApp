@@ -69,6 +69,7 @@
 .column-header,
 .column-body {
   margin: 3px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .column-header {
@@ -86,6 +87,7 @@
   background-color: #D0F4DE;
   color: #333;
   padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .body-2 {
@@ -93,6 +95,7 @@
   color: #333;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .body-3 {
@@ -100,12 +103,14 @@
   color: #333;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .body-4 {
   background-color: #E4C1F9;
   color: #333;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   
 }
 
