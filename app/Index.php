@@ -357,8 +357,9 @@ urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
 var rutaActual = window.location.href;
 var expresionRegular = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/colabora\/adopta\.php\?peticion=adoptar&mascota=.*/;
 var expresionRegularOrden = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/desplegable_usuario\/mi_perfil\.php\?orden=.*/;
+var expresionRegularEditanimales = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/desplegable_usuario\/edicion_animales\.php\?animal=.*/;
 
-if (expresionRegular.test(rutaActual)|| expresionRegularOrden.test(rutaActual)) {
+if (expresionRegular.test(rutaActual)|| expresionRegularOrden.test(rutaActual) || expresionRegularEditanimales.test(rutaActual)) {
   console.log("La ruta actual coincide con la expresión regular.");
   urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';

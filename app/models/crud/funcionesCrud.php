@@ -146,5 +146,11 @@ function getallAnimales(){
     return $array_animales;
 }
 
-//FUNCIONES DE SESSION
+//MODIFICAR ANIMAL 
+function guardarcambiosAnimal($animal):bool{
+    // Creo una nueva conexión
+    $midb = AccesoDatos::getModelo();
+    $update=$midb->updateAnimal($animal);
+    return $update;
+   }
 ?>

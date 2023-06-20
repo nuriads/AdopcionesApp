@@ -105,20 +105,22 @@ class AccesoDatos {
     //UPDATE USUARIO
     public function updateUsuario($user):bool{
        
-        $stmt_crearRef  = $this->dbh->prepare("update `usuario` set `nombre`=?, `apellidos`=?, `nick`=?, `contrasena`=?, `intereses`=? where `email`=?");
+        $stmt_update  = $this->dbh->prepare("update `usuario` set `nombre`=?, `apellidos`=?, `nick`=?, `contrasena`=?, `intereses`=? where `email`=?");
         
-        $stmt_crearRef->bindValue(1,$user->nombre);
-        $stmt_crearRef->bindValue(2,$user->apellidos); 
-        $stmt_crearRef->bindValue(3,$user->nick);   
-        $stmt_crearRef->bindValue(4,$user->contrasena);
-        $stmt_crearRef->bindValue(5,$user->intereses);
-        $stmt_crearRef->bindValue(6,$user->email);
-       
-            $stmt_crearRef->execute();
-    
+        $stmt_update->bindValue(1,$user->nombre);
+        $stmt_update->bindValue(2,$user->apellidos); 
+        $stmt_update->bindValue(3,$user->nick);   
+        $stmt_update->bindValue(4,$user->contrasena);
+        $stmt_update->bindValue(5,$user->intereses);
+        $stmt_update->bindValue(6,$user->email);
+       try{
+            $stmt_update->execute();
+        }catch(Exception $e){
+            return false;
+        }
        
         
-        $resu = ($stmt_crearRef->rowCount () == 1);
+        $resu = ($stmt_update->rowCount () == 1);
         return $resu;
     }
 
@@ -281,5 +283,31 @@ class AccesoDatos {
 
         // Devuelvo el array de animales
         return $array_animales;
+    }
+
+    //UPDATE ANIMAL
+    public function updateAnimal($animal):bool{
+       
+        $stmt_update  = $this->dbh->prepare("update `animal` set `especie`=?, `raza`=?, `nombre`=?, `sexo`=?, `fecha_nac`=?, `tamano`=?, `peso`=?, `descripcion`=?, `extension_imagen`=? where `microchip`=?");
+        
+        $stmt_update->bindValue(1,$animal->especie);
+        $stmt_update->bindValue(2,$animal->raza); 
+        $stmt_update->bindValue(3,$animal->nombre);   
+        $stmt_update->bindValue(4,$animal->sexo);
+        $stmt_update->bindValue(5,$animal->fecha_nac);
+        $stmt_update->bindValue(6,$animal->tamano);
+        $stmt_update->bindValue(7,$animal->peso);
+        $stmt_update->bindValue(8,$animal->descripcion);
+        $stmt_update->bindValue(9,$animal->extension_imagen);
+        $stmt_update->bindValue(10,$animal->microchip);
+        try{
+            $stmt_update->execute();
+        }catch(Exception $e){
+            return false;
+        }
+       
+        
+        $resu = ($stmt_update->rowCount () == 1);
+        return $resu;
     }
 }
