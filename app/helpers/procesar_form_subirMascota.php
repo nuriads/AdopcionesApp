@@ -76,10 +76,7 @@ function checkImagen(array $imagen){
     if($imagen["size"]>$limitebytes){
         $msg.="error, la imagen debe pesar menos de 1000kb";
     }
-    if($imagen["type"] != "image/jpeg"){
-        $msg.="Error, la imagen debe ser .jpg";
-      
-    }
+    
 
 
  }

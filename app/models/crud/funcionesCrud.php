@@ -15,7 +15,14 @@ function getRefugio($email){
     $ref=$midb->getRefugio($email);
     return $ref;
 }
-//
+//MODIFICAR REFUGIO 
+function guardarcambiosRef($refugio):bool{
+ // Creo una nueva conexión
+ $midb = AccesoDatos::getModelo();
+
+    
+ return true;
+}
 
 //FUNCIONES CRUD USUARIO
 function insertUser($user):bool{
@@ -54,7 +61,14 @@ function userOk($email,$clave,$rol){
     }
     return $ok;
 }
-
+//MODIFICAR REFUGIO 
+function guardarcambiosUser($refugio):bool{
+    // Creo una nueva conexión
+    $midb = AccesoDatos::getModelo();
+   
+       
+    return true;
+   }
 //Devuelve el rol, y si no está el email en la BBDD devuelve una cadena vacía
 function getUserRol($email){
     $rol='';
