@@ -21,7 +21,7 @@
             Encontrar adoptantes para los animales viejitos es complicado, las familias suelen preferir cachorros o animales jóvenes para compartir más tiempo con ellos. Sin embargo, olvidamos que el tiempo que compartamos con un viejito será mucho más intenso, su capacidad de agradecimiento es infinita y sus miradas muy dulces porque ya no tienen que demostrar nada, sólo querer y dejarse querer. Son animales que en su mayoría ya están educados lo que facilita la etapa de adaptación, son tranquilos y exigen algo menos de actividad. Lamentablemente cada día que pasan en el Centro se esfuma un porcentaje muy alto de su tiempo para disfrutar.
           </div>
           <div class="col">
-                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=362&q=80" alt="elderly-dog" style="width:350px;height:350px;">
+                <img id='img-abuelito' src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=362&q=80" alt="elderly-dog" style="width:350px;height:350px;">
             </div>
           <div class="row">
             
@@ -71,7 +71,9 @@
   margin: 3px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
-
+#img-abuelito{
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
 .column-header {
   padding: 35px;
   /* background-color: #fb9ee7; */
@@ -121,8 +123,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  
+
 }
+
 
 .row img {
   width: 350px;
