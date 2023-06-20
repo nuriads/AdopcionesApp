@@ -1,6 +1,7 @@
 <?php
 include '../models/AccesoDatos.php';
 include '../models/Refugio.php';
+include '../models/Usuario.php';
 include '../models/crud/funcionesCrud.php';
 
 //Inicio sesion o recupero la sesion si ya está iniciada
@@ -10,6 +11,8 @@ session_start();
 if(isset($_SESSION["mensaje_error"])){
   unset($_SESSION["mensaje_error"]);
 }
+
+if($_POST['rol']=="refugio"){
 
 
 //Creo objeto REFUGIO
@@ -30,6 +33,34 @@ $refugio_update->comunidad = $_POST['comunidad'];
 //Inserto los datos en la base de datos
 $upadate=guardarcambiosRef($refugio_update);
 
+}
+
+if($_POST['rol']=="Adoptante"){
+
+
+    //Creo objeto usuario
+$user_update= new Usuario();
+
+// Procesar datos del formulario
+$user_update->email = $_POST['email'];
+$user_update->nombre = $_POST['nombre'];
+$user_update->apellidos = $_POST['apellidos'];
+$user_update->nick = $_POST['nick'];
+$user_update->contrasena = $_POST['contrasena'];
+$user_update->intereses = $_POST['intereses'];
+
+//Compruebo que la contraseá no esté vacia
+if($user_update->contrasena==""){
+    $upadate=false;
+    
+    
+}else{
+//Inserto los datos en la base de datos
+$upadate=guardarcambiosUser($user_update);
+
+}
+
+}
 //Muestro un mensaje dependiendo de si se ha insertado correctamente o no
 if ($upadate) {
  

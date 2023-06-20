@@ -65,26 +65,6 @@ class AccesoDatos {
       }
   
 
-
-/*
-    // UPDATE USUARIO
-    public function modUsu($usu):bool{
-      
-        $stmt_moduser   = $this->dbh->prepare("update Clientes set first_name=:first_name,last_name=:last_name".
-        ",email=:email,gender=:gender, ip_address=:ip_address,telefono=:telefono WHERE id=:id");
-        $stmt_moduser->bindValue(':first_name', $usu->first_name);
-        $stmt_moduser->bindValue(':last_name'   ,$usu->last_name);
-        $stmt_moduser->bindValue(':email'       ,$usu->email);
-        $stmt_moduser->bindValue(':gender'      ,$usu->gender);
-        $stmt_moduser->bindValue(':ip_address'  ,$usu->ip_address);
-        $stmt_moduser->bindValue(':telefono'    ,$usu->telefono);
-        $stmt_moduser->bindValue(':id'          ,$usu->id);
-
-        $stmt_moduser->execute();
-        $resu = ($stmt_moduser->rowCount () == 1);
-        return $resu;
-    }
-*/
     //GET USUARIO Devuelvo un usuario o false
     public function getUsuario ($email) {
         $usu = false;
@@ -119,6 +99,26 @@ class AccesoDatos {
         }
         
         $resu = ($stmt_crearuser->rowCount () == 1);
+        return $resu;
+    }
+
+    //UPDATE USUARIO
+    public function updateUsuario($user):bool{
+       
+        $stmt_crearRef  = $this->dbh->prepare("update `usuario` set `nombre`=?, `apellidos`=?, `nick`=?, `contrasena`=?, `intereses`=? where `email`=?");
+        
+        $stmt_crearRef->bindValue(1,$user->nombre);
+        $stmt_crearRef->bindValue(2,$user->apellidos); 
+        $stmt_crearRef->bindValue(3,$user->nick);   
+        $stmt_crearRef->bindValue(4,$user->contrasena);
+        $stmt_crearRef->bindValue(5,$user->intereses);
+        $stmt_crearRef->bindValue(6,$user->email);
+       
+            $stmt_crearRef->execute();
+    
+       
+        
+        $resu = ($stmt_crearRef->rowCount () == 1);
         return $resu;
     }
 

@@ -60,13 +60,12 @@ function userOk($email,$clave,$rol){
     }
     return $ok;
 }
-//MODIFICAR REFUGIO 
-function guardarcambiosUser($refugio):bool{
+//MODIFICAR USUARIO 
+function guardarcambiosUser($user):bool{
     // Creo una nueva conexión
     $midb = AccesoDatos::getModelo();
-   
-       
-    return true;
+    $update=$midb->updateUsuario($user);
+    return $update;
    }
 //Devuelve el rol, y si no está el email en la BBDD devuelve una cadena vacía
 function getUserRol($email){

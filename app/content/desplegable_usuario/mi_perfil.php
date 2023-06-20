@@ -10,6 +10,9 @@ $email = $_SESSION['email'];
 $user = getUser($email);
 $fechaActual = getdate();
 $auto = $_SERVER['PHP_SELF'];
+if (isset($_GET["orden"])) {
+  $orden = $_GET["orden"];
+}
 
 //Borro el mensaje de error si anteriormente existia
 if (isset($_SESSION["mensaje_error"])) {
@@ -28,42 +31,94 @@ if (isset($_SESSION["mensaje_error"])) {
   ?>
   <div class="container">
     <h2>Mi cuenta</h2>
+    <!--Muestro el mensaje de inicio de sesión de bienvenido-->
     <?php if (isset($_SESSION['mensaje'])) : ?>
 
       <p><?= $_SESSION['mensaje'] ?></p>
 
     <?php endif; ?>
+
+    <!--Muestro el mensaje si se ha actualizado el perfil-->
+    <?php if (isset($_SESSION["mensaje_actualización"]) && $_SESSION["mensaje_actualización"] != " ") : ?>
+      <p style=" padding: 1%;
+           border-radius: 5px;
+           background-color: rgba(0, 255, 0, 0.15);
+           color: green;
+           font-size:0.9rem"><?= $_SESSION["mensaje_actualización"] ?></p>
+      <!-- Borro de la sesion el mensaje para que no aparezca todo el rato-->
+      <?= $_SESSION["mensaje_actualización"] = " " ?>
+    <?php endif; ?>
+
+    <!--Muestro el mensaje si NO se ha actualizado el perfil-->
+    <?php if (isset($_SESSION["mensaje_error_actualización"]) && $_SESSION["mensaje_error_actualización"] != " ") : ?>
+      <p style=" padding: 1%;
+           border-radius: 5px;
+           background-color: rgba(247, 111, 111, 0.15);
+           color: red;
+           font-size:0.9rem"><?= $_SESSION["mensaje_error_actualización"] ?></p>
+      <!-- Borro de la sesion el mensaje para que no aparezca todo el rato-->
+      <?= $_SESSION["mensaje_error_actualización"] = " " ?>
+    <?php endif; ?>
     <div class="row">
       <div class="col-md-4" style="height: 600px">
-        <div class="card" style="height: 600px">
+        <div class="card" style="height: 860px">
           <div class="card-header">Mis Datos</div>
           <div class="card-body">
             <div class="text-center">
               <img src="../../../assets/images/users/foto-user.jpg" class="rounded-circle" alt="Foto de perfil" style="width: 150px; height: 150px;">
             </div>
             <br>
+            <form action="../../helpers/procesar_form_modificar.php" method="POST">
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" value="<?= $user->nombre ?>" readonly>
+              <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $user->nombre ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
+            </div>
+            <div class="form-group">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?= $user->apellidos ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" value="<?= $user->email ?>" readonly>
+              <input type="email" class="form-control" id="email" name="email" value="<?= $user->email ?>" readonly>
             </div>
             <div class="form-group">
               <label for="telefono">Nick</label>
-              <input type="phone" class="form-control" id="telefono" value="<?= $user->nick ?> " readonly>
+              <input type="phone" class="form-control" id="telefono" name="nick" value="<?= $user->nick ?> " <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" value="<?= $user->contrasena ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
+              </div>
+            <div class="form-group">
+              <label for="intereses">Intereses</label>
+              <input type="" class="form-control" id="intereses" name="intereses" value="<?= $user->intereses ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
             </div>
             <div class="form-group">
               <label for="rol">Rol</label>
-              <input type="phone" class="form-control" id="telefono" value="<?php if ($_SESSION['rol'] = "usuario") {
+              <input type="phone" class="form-control" id="rol" name="rol" value="<?php if ($_SESSION['rol'] = "usuario") {
                                                                               echo "Adoptante";
                                                                             } ?>" readonly>
             </div>
           </div>
-          <div class="card-footer"><button type="submit" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
-                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-              </svg>&nbsp;Editar</button></div>
+          <div class="card-footer">
+          <?php if (!isset($orden) || $orden != "Modificar") : ?>
+              <a <?php echo "href=\"" . $auto . "?orden=Modificar&id=$user->email\""; ?> class="btn boton-animales"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                  <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                </svg>&nbsp;Editar</a>
+            <?php endif; ?>
+              <?php if (isset($orden) && $orden == "Modificar") : ?>
+              <a href="./mi_perfil.php" class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                </svg>&nbsp;Cancelar</a>
+              <button type="submit" class="btn boton-animales"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
+                  <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
+                </svg>&nbsp;Guardar</button>
+
+
+
+            <?php endif; ?>
+            </form>
+          </div>
         </div>
 
       </div>
@@ -80,37 +135,9 @@ if (isset($_SESSION["mensaje_error"])) {
         </div>
 
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">Opciones de cuenta</div>
-          <div class="card-body">
-            <ul class="list-group">
-              <li class="list-group-item">Cambiar contraseña</li>
-              <li class="list-group-item">Actualizar información</li>
-              <li class="list-group-item">Mis mascotas</li>
-              <li class="list-group-item">Mis solicitudes de adopción</li>
-              <li class="list-group-item">Mis favoritos</li>
-              <li class="list-group-item">Cerrar sesión</li>
-            </ul>
+     
 
-
-
-          </div>
-          <div class="card-footer"></div>
-        </div>
-
-      </div>
-
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Preferencias de adopción</div>
-          <div class="card-body">
-
-          </div>
-          <div class="card-footer"></div>
-        </div>
-
-      </div>
+     
 
     </div>
 
@@ -177,7 +204,7 @@ if (isset($_SESSION["mensaje_error"])) {
                 <input type="text" class="form-control" id="nombre" name="nom_refugio" value="<?= $refugio->nom_refugio ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
               </div>
               <div class="form-group">
-                <label for="nombre">Nif</label>
+                <label for="nif">Nif</label>
                 <input type="text" class="form-control" id="nif" name="nif" value="<?= $refugio->nif ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
               </div>
               <div class="form-group">
@@ -185,11 +212,11 @@ if (isset($_SESSION["mensaje_error"])) {
                 <input type="email" class="form-control" id="email" name="email" value="<?= $refugio->email ?>" readonly>
               </div>
               <div class="form-group">
-                <label for="rol">Contraseña</label>
+                <label for="contrasena">Contraseña</label>
                 <input type="password" class="form-control" id="contrasena" name="contrasena" value="<?= $refugio->contrasena ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
               </div>
               <div class="form-group">
-                <label for="rol">Web</label>
+                <label for="web">Web</label>
                 <input class="form-control" id="web" name="web" value="<?= $refugio->web ?>" <?= (!isset($orden) || $orden != "Modificar") ? "readonly" : "" ?>>
               </div>
               <div class="form-group">
@@ -206,13 +233,13 @@ if (isset($_SESSION["mensaje_error"])) {
               </div>
               <div class="form-group">
                 <label for="rol">Rol</label>
-                <input type="phone" class="form-control" id="rol" value="<?= $_SESSION['rol'] ?>" readonly>
+                <input type="phone" class="form-control" id="rol" name="rol" value="<?= $_SESSION['rol'] ?>" readonly>
               </div>
           </div>
 
           <div class="card-footer">
             <?php if (!isset($orden) || $orden != "Modificar") : ?>
-              <a <?php echo "href=\"" . $auto . "?orden=Modificar&id=$refugio->nif\""; ?> class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+              <a <?php echo "href=\"" . $auto . "?orden=Modificar&id=$refugio->nif\""; ?> class="btn boton-animales"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
                   <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
                 </svg>&nbsp;Editar</a>
             <?php endif; ?>
@@ -220,7 +247,7 @@ if (isset($_SESSION["mensaje_error"])) {
               <a href="./mi_perfil.php" class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
                 </svg>&nbsp;Cancelar</a>
-              <button type="submit" class="btn btn-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
+              <button type="submit" class="btn boton-animales"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
                   <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
                 </svg>&nbsp;Guardar</button>
 
