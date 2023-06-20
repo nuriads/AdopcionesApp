@@ -19,9 +19,8 @@ function getRefugio($email){
 function guardarcambiosRef($refugio):bool{
  // Creo una nueva conexión
  $midb = AccesoDatos::getModelo();
-
-    
- return true;
+ $update=$midb->updateRefugio($refugio);
+ return $update;
 }
 
 //FUNCIONES CRUD USUARIO
