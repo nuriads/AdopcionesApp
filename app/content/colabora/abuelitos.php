@@ -83,30 +83,30 @@
 }
 
 .body-1 {
-  background-color: #CCFBFE;
+  background-color: #D0F4DE;
   color: #333;
   padding: 20px;
 }
 
 .body-2 {
-  background-color: #CDACA1;
+  background-color: #FCF6BD;
   color: #333;
   padding: 20px;
   border-radius: 10px;
 }
 
 .body-3 {
-  background-color: #ffdab9;
+  background-color: #A9DEF9;
   color: #333;
   padding: 20px;
   border-radius: 10px;
 }
 .body-4 {
-  background-color: #ffdab9;
+  background-color: #E4C1F9;
   color: #333;
   padding: 20px;
   border-radius: 10px;
-  background-color: #FCF6BD;
+  
 }
 
 
