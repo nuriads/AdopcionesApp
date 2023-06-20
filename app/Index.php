@@ -356,8 +356,9 @@ urlcerrarsesion='../desplegable_usuario/cerrar_sesion.php';
 //Para que cuandola url tenga petición get sigan funcionando las urls
 var rutaActual = window.location.href;
 var expresionRegular = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/colabora\/adopta\.php\?peticion=adoptar&mascota=.*/;
+var expresionRegularOrden = /^http:\/\/localhost\/AdopcionesApp_3\.0\/app\/content\/desplegable_usuario\/mi_perfil\.php\?orden=.*/;
 
-if (expresionRegular.test(rutaActual)) {
+if (expresionRegular.test(rutaActual)|| expresionRegularOrden.test(rutaActual)) {
   console.log("La ruta actual coincide con la expresión regular.");
   urlestilos='../../../assets/style.css'; 
  urluser = '../../../assets/images/users/avatardefault.png';
