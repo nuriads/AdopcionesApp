@@ -5,10 +5,10 @@
         <div class="container">
 
         <div class="row">
-          <div class="column-header col">
+          <div class="column-header col display-6">
             Adopta un abuelito
           </div>
-          <div class="column-header col">
+          <div class="column-header col display-6">
             ¿Quieres saber cómo ayudar a los animales más mayores?
           </div>
         </div>
@@ -29,10 +29,10 @@
         </div>
 
         <div class="row">
-            <div class="column-body body-3 col">
+            <div class="column-body body-3 col ">
                 Te proponemos que seas su gran oportunidad. Acoge a uno de nuestros viejitos bien por un tiempo indefinido, bien hasta su fallecimiento. En el caso de la primera opción, nosotros seguiremos intentando encontrarle un hogar definitivo pero dale, desde ya, la suerte de cariños cercanos, cama blandita, paseos, amigos y mimos que tanto necesitan.
             </div>
-            <div class="column-body body-4 col">
+            <div class="column-body body-4 col ">
                 Desde AdoptApp cubriremos todas sus necesidades de alimentación, atención veterinaria, medicación caso de necesitarlo y residencia u otra casa, durante los días que tengas que ausentarte. Haz una solicitud a través del formulario de adopción, indicando que estás interesado/a en adoptar un abuelito. 
                 <a href="adopta.php" class="boton-animales">Recibir más información</a>
             </div>
@@ -76,12 +76,9 @@
 }
 .column-header {
   padding: 35px;
-  /* background-color: #fb9ee7; */
   background-color: #fff;
   color: #000;
-  font-size: 25px;
   text-align: center;
-  font-weight: bold;
   border: solid 3px #d97bb2;
 }
 
